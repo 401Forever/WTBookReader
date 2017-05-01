@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "排行榜"; ObjectID = "6Pb-5Q-wDo"; */
+"6Pb-5Q-wDo.text" = "排行榜";
+
+/* Class = "UILabel"; text = "46355本"; ObjectID = "6if-3p-u8t"; */
+"6if-3p-u8t.text" = "46355本";
+
+/* Class = "UITabBarItem"; title = "找书"; ObjectID = "JoQ-u0-wnK"; */
+"JoQ-u0-wnK.title" = "找书";
+
+/* Class = "UITabBarItem"; title = "书架"; ObjectID = "OhJ-PI-lkY"; */
+"OhJ-PI-lkY.title" = "书架";
+
+/* Class = "UINavigationItem"; title = "书架"; ObjectID = "ozz-BS-w0Y"; */
+"ozz-BS-w0Y.title" = "书架";
+
+/* Class = "UINavigationItem"; title = "找书"; ObjectID = "t69-NP-wko"; */
+"t69-NP-wko.title" = "找书";
+
+/* Class = "UILabel"; text = "男生"; ObjectID = "tZ1-ht-Va7"; */
+"tZ1-ht-Va7.text" = "男生";
+
+/* Class = "UILabel"; text = "奇幻"; ObjectID = "uAo-hQ-6QM"; */
+"uAo-hQ-6QM.text" = "奇幻";

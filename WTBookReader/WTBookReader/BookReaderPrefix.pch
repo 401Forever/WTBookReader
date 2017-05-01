@@ -1,0 +1,28 @@
+//
+//  BookReaderPrefix.pch
+//  WTBookReader
+//
+//  Created by xueban on 2017/4/22.
+//  Copyright © 2017年 lyw. All rights reserved.
+//
+
+#ifndef BookReaderPrefix_pch
+#define BookReaderPrefix_pch
+
+#ifdef __OBJC__
+    #import "GlobalMacro.h"
+    #import <MJExtension/MJExtension.h>
+    #import <MJRefresh/MJRefresh.h>
+    #import <AFNetworking/AFNetworking.h>
+    // Reactive Cocoa 相关
+    #import <ReactiveCocoa/ReactiveCocoa.h>
+    #import <ReactiveCocoa/RACEXTScope.h>
+    #import <SDImageCache.h>
+    #import <SDWebImageManager.h>
+
+    #import "WTNetworkManager.h"
+#endif
+
+
+
+#endif /* BookReaderPrefix_pch */
