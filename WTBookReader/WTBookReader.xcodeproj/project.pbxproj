@@ -12,6 +12,8 @@
 		1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0769651EAF32E800AB695E /* WTSortModel.m */; };
 		1F0769691EAF32F700AB695E /* WTSortViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0769681EAF32F700AB695E /* WTSortViewModel.m */; };
 		1F07696C1EAF37F500AB695E /* WTNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F07696B1EAF37F500AB695E /* WTNetworkManager.m */; };
+		1F3831051EB828C000784AC8 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3831021EB828C000784AC8 /* NSArray+Log.m */; };
+		1F3831061EB828C000784AC8 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3831041EB828C000784AC8 /* NSDictionary+Log.m */; };
 		1F3DBE911EB041920036E483 /* libReactiveCocoa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3DBE901EB041920036E483 /* libReactiveCocoa.a */; };
 		1F3DBE951EB087050036E483 /* WTSortDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DBE941EB087050036E483 /* WTSortDetailVC.m */; };
 		1F3DBE9C1EB1C44B0036E483 /* WTSortDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3DBE9B1EB1C44B0036E483 /* WTSortDetailViewModel.m */; };
@@ -62,6 +64,10 @@
 		1F07696B1EAF37F500AB695E /* WTNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNetworkManager.m; sourceTree = "<group>"; };
 		1F07696D1EAF4B1A00AB695E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		1F07696E1EAF4B1B00AB695E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		1F3831011EB828C000784AC8 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		1F3831021EB828C000784AC8 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		1F3831031EB828C000784AC8 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		1F3831041EB828C000784AC8 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
 		1F3DBE901EB041920036E483 /* libReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactiveCocoa.a; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa/libReactiveCocoa.a"; sourceTree = "<group>"; };
 		1F3DBE931EB087050036E483 /* WTSortDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSortDetailVC.h; sourceTree = "<group>"; };
 		1F3DBE941EB087050036E483 /* WTSortDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSortDetailVC.m; sourceTree = "<group>"; };
@@ -163,6 +169,17 @@
 			path = SortVC;
 			sourceTree = "<group>";
 		};
+		1F3831001EB8289800784AC8 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1F3831011EB828C000784AC8 /* NSArray+Log.h */,
+				1F3831021EB828C000784AC8 /* NSArray+Log.m */,
+				1F3831031EB828C000784AC8 /* NSDictionary+Log.h */,
+				1F3831041EB828C000784AC8 /* NSDictionary+Log.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		1F3DBE921EB086B80036E483 /* SortDetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +260,7 @@
 		1FD0FE0F1EAB30DB007FECA6 /* WTBookReader */ = {
 			isa = PBXGroup;
 			children = (
+				1F3831001EB8289800784AC8 /* Category */,
 				1FD0FE451EAB374C007FECA6 /* API */,
 				1FD0FE431EAB3199007FECA6 /* Main */,
 				1FD0FE441EAB319F007FECA6 /* Other */,
@@ -511,9 +529,11 @@
 				1F4F55AE1EADAC7D003A5535 /* WTFindBookModel.m in Sources */,
 				1F3DBE9F1EB1C5CB0036E483 /* WTSortDetailCell.m in Sources */,
 				1F4F55A71EADABE6003A5535 /* WTFindBookCell.m in Sources */,
+				1F3831061EB828C000784AC8 /* NSDictionary+Log.m in Sources */,
 				1F07696C1EAF37F500AB695E /* WTNetworkManager.m in Sources */,
 				1F0769621EAF225100AB695E /* WTSortCell.m in Sources */,
 				1F07695F1EAEFC2B00AB695E /* WTSortVC.m in Sources */,
+				1F3831051EB828C000784AC8 /* NSArray+Log.m in Sources */,
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
 				1F3DBEA21EB1CA810036E483 /* WTSortDetailModel.m in Sources */,
 				1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */,

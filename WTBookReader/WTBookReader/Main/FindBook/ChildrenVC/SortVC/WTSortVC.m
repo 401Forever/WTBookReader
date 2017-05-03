@@ -49,10 +49,10 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
-    WTSortDetailVC *detailVC = [WTSortDetailVC sortDetailVC];
     WTSortDataSource *sectionData = self.sortViewModel.dataSource[indexPath.section];
     WTSortItemModel *item = sectionData.sectionData[indexPath.row];
-    detailVC.title = item.name;
+    WTSortDetailViewModel *viewModel = [[WTSortDetailViewModel alloc] initWithModel:item];
+    WTSortDetailVC *detailVC = [WTSortDetailVC sortDetailVCWithViewModel:viewModel];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

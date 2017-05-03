@@ -34,6 +34,13 @@
     return self;
 }
 
+- (instancetype)initWithModel:(WTSortItemModel *)model{
+    if (self = [self init]) {
+        _model = model;
+    }
+    return self;
+}
+
 - (void)initialBind{
      @weakify(self);
     _reuqesCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *input) {
@@ -48,8 +55,8 @@
             NSDictionary *requestDict = @{
                                           @"gender":@"male",//第一级分组 男、女、出版类
                                           @"type":self.bookTypes[self.pageIndex], // 书籍状态等
-                                          @"major":@"都市",// 第二级分组
-                                          @"minor":@"都市生活", // 第三级分组
+                                          @"major":self.model.name.length ? self.model.name : @"",// 第二级分组 都市
+                                          @"minor":@"", // 第三级分组 都市生活
                                           @"start":@(startCount),// 起始获取节点
                                           @"limit":@"50", //每次获取数量
                                           };
@@ -78,6 +85,15 @@
             [currentData addObjectsFromArray:model.books];
             return RACTuplePack(pageIndex, model.books);
         }];
+    }];
+    
+    
+    _canFetchHeaderDataSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self);
+        NSArray *currentDataSource = self.dataArray[self.pageIndex];
+        BOOL canHeaderFetch = currentDataSource.count ? NO : YES;
+        [subscriber sendNext:@(canHeaderFetch)];
+        return nil;
     }];
 }
 

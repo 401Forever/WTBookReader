@@ -27,7 +27,7 @@
 - (RACSignal *)fetchImageSignal{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (!self.cover.length) {
-            [subscriber sendNext:nil];
+            [subscriber sendNext:[UIImage imageNamed:@"default_book_cover"]];
             [subscriber sendCompleted];
             return nil;
         }

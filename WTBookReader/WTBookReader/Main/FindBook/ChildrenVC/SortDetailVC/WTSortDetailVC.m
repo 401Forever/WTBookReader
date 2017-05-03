@@ -8,7 +8,7 @@
 
 #import "WTSortDetailVC.h"
 #import "WTSortDetailCell.h"
-#import "WTSortDetailViewModel.h"
+
 
 @interface WTSortDetailVC ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIScrollView *mainScrollView;
@@ -31,6 +31,12 @@
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WTSortDetailVC *vc = [storyBoard instantiateViewControllerWithIdentifier:@"WTSortDetailVC"];
     return vc;
+}
+
++ (instancetype)sortDetailVCWithViewModel:(WTSortDetailViewModel *)viewModel{
+    WTSortDetailVC *detailVC = [WTSortDetailVC sortDetailVC];
+    detailVC.sortDetailViewModel = viewModel;
+    return detailVC;
 }
 
 - (void)viewDidLoad {
@@ -65,6 +71,7 @@
     WTSortDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"WTSortDetailCell" forIndexPath:indexPath];
     cell.model = [self.sortDetailViewModel modelAtIndexPath:indexPath];
     cell.bookImageView.image = nil;
+    cell.bookImageView.image = [UIImage imageNamed:@"default_book_cover"];
     [cell.model.fetchImageSignal subscribeNext:^(UIImage *image) {
         cell.bookImageView.image = image;
     }];
@@ -80,6 +87,7 @@
     NSInteger index = self.mainScrollView.contentOffset.x / MainScreenWidth;
     [self animationToIndex:index];
     self.sortDetailViewModel.pageIndex = index;
+    [self fetchHeaderData];
 }
 
 #pragma mark - Target Action
@@ -91,6 +99,7 @@
                                     self.mainScrollView.frame.size.height);
     [self.mainScrollView scrollRectToVisible:targetPoint animated:YES];
     self.sortDetailViewModel.pageIndex = sender.tag;
+    [self fetchHeaderData];
 }
 
 - (void)fetchDataFromHeader{
@@ -102,8 +111,8 @@
          @strongify(self);
          RACTupleUnpack(NSNumber *pageIndex,id data) = x;
          UITableView *currentTableView = self.tableViewArray[[pageIndex intValue]];
-         [currentTableView reloadData];
          [currentTableView.mj_header endRefreshing];
+         [currentTableView reloadData];
     }];
 }
 
@@ -116,7 +125,7 @@
          RACTupleUnpack(NSNumber *pageIndex,id data) = x;
          UITableView *currentTableView = self.tableViewArray[[pageIndex intValue]];
          [currentTableView reloadData];
-         [currentTableView.mj_header endRefreshing];
+         [currentTableView.mj_footer endRefreshing];
      }];
 
 }
@@ -130,11 +139,26 @@
     }];
 }
 
+- (void)fetchHeaderData{
+    @weakify(self);
+    [[self.sortDetailViewModel.canFetchHeaderDataSignal filter:^BOOL(NSNumber *value) {
+        return [value boolValue];
+    }] subscribeNext:^(id x) {
+        @strongify(self);
+        UITableView *currentTableView = self.tableViewArray[self.sortDetailViewModel.pageIndex];
+        [currentTableView.mj_header beginRefreshing];
+    }];
+}
+
 #pragma mark - Setter And Getter 
 - (WTSortDetailViewModel *)sortDetailViewModel{
     if (!_sortDetailViewModel) {
         _sortDetailViewModel = [[WTSortDetailViewModel alloc] init];
     }
     return _sortDetailViewModel;
+}
+
+- (NSString *)title{
+    return self.sortDetailViewModel.model.name;
 }
 @end

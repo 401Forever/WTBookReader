@@ -39,6 +39,7 @@ static WTNetworkManager *shareNetworkManager = nil;
                 postValue:(id)postData
          withRequestBlock:(RequestResult)requestResult{
     if (!postData) return;
+    NSLog(@"*** \n URL:%@ \n postData:%@ \n***",urlString, postData);
     [_manager POST:urlString parameters:postData progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         requestResult((NSDictionary *)responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -54,6 +55,7 @@ static WTNetworkManager *shareNetworkManager = nil;
 - (void)getWithURLString:(NSString *)urlString
                postValue:(id)postData
         withRequestBlock:(RequestResult)requestResult{
+    NSLog(@"*** \n URL:%@ \n postData:%@ \n***",urlString, postData);
     [_manager GET:urlString parameters:postData progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         requestResult((NSDictionary *)responseObject,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
