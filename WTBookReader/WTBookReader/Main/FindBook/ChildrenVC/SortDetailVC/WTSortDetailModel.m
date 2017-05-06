@@ -37,7 +37,12 @@
         }
         NSURL *url = [NSURL URLWithString:imageUrl];
        [[SDWebImageManager sharedManager] downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-           [subscriber sendNext:image];
+           if (image) {
+               [subscriber sendNext:image];
+               [subscriber sendCompleted];
+               return;
+           }
+           [subscriber sendNext:[UIImage imageNamed:@"default_book_cover"]];
            [subscriber sendCompleted];
        }];
         return nil;

@@ -53,7 +53,9 @@
     switch (indexPath.row) {
         case 0:
         {
-           
+            WTRankVC *rankVC = [WTRankVC rankVC];
+            rankVC.title = model.title;
+            [self.navigationController pushViewController:rankVC animated:YES];
             break;
         }
         case 1:

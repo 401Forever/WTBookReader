@@ -10,6 +10,7 @@
 #define ApiDefine_h
 
 #define HostString @"http://api.zhuishushenqi.com"
+#define StaticHostString @"http://statics.zhuishushenqi.com"
 
 //路由相关
 #define Route_Rank @"ranking" //排行榜

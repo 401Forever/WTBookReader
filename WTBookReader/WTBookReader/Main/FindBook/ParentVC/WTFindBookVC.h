@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WTSortVC.h"
+#import "WTRankVC.h"
 @interface WTFindBookVC : UITableViewController
 
 @end

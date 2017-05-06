@@ -58,7 +58,7 @@
                                           @"major":self.model.name.length ? self.model.name : @"",// 第二级分组 都市
                                           @"minor":@"", // 第三级分组 都市生活
                                           @"start":@(startCount),// 起始获取节点
-                                          @"limit":@"50", //每次获取数量
+                                          @"limit":@"20", //每次获取数量
                                           };
             NSString *url = [NSString stringWithFormat:@"%@/%@/%@",HostString,Route_Book,Interface_Book_Category];
             [[WTNetworkManager shareNetworkManager] getWithURLString:url
