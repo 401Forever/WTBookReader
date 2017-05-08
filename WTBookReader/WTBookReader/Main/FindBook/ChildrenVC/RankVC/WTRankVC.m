@@ -78,16 +78,14 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     WTRankDataSource *sectionModel = self.rankViewModel.dataSource[indexPath.section];
     WTRankItemModel *model = sectionModel.sectionData[indexPath.row];
-    switch (indexPath.row) {
-        case 0:
-        {
-            
-        }
-        case 1:
-        {
-        }
-        default:
-            break;
+    if (!model.collapse) {
+        WTRankDetailViewModel *viewModel = [[WTRankDetailViewModel alloc] initWithModel:model];
+        WTRankMutilDetailVC *detailVC = [WTRankMutilDetailVC rankDetailVCWithViewModel:viewModel];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }else{
+        WTRankDetailViewModel *viewModel = [[WTRankDetailViewModel alloc] initWithModel:model];
+        WTRankSingleDetailVC *detailVC = [WTRankSingleDetailVC rankDetailVCWithViewModel:viewModel];
+        [self.navigationController pushViewController:detailVC animated:YES];
     }
 }
 

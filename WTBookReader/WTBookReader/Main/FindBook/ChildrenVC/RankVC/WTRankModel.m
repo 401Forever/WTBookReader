@@ -12,6 +12,13 @@
 @implementation WTRankItemModel
 - (RACSignal *)fetchImageSignal{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        if (self.collapse) {
+//            [subscriber sendNext:[UIImage imageNamed:@"ranking_other"]];
+             [subscriber sendNext:nil];
+            [subscriber sendCompleted];
+            return nil;
+
+        }
         if (!self.cover.length) {
             [subscriber sendNext:nil];
             [subscriber sendCompleted];

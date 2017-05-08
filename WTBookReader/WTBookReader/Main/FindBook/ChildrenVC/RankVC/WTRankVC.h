@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "WTRankViewModel.h"
 #import "WTRankCell.h"
+#import "WTRankMutilDetailVC.h"
+#import "WTRankSingleDetailVC.h"
 @interface WTRankVC : UIViewController
 + (instancetype)rankVC;
 @end

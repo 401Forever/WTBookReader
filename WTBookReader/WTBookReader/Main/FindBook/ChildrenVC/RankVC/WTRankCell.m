@@ -13,7 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     RAC(self.rankTitleLabel, text) = RACObserve(self, model.title);
-    RAC(self.rankArrowView,hidden) = [RACObserve(self, model.collapse) not];
+//    RAC(self.rankArrowView,hidden) = [RACObserve(self, model.collapse) not];
 }
 
 @end
