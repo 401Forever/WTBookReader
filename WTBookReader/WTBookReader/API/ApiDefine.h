@@ -51,6 +51,9 @@
 #define Interface_Catalogue @"mix-toc" // 获取数据的目录 例如 http://api.zhuishushenqi.com/mix-toc/5559c3f38e9e69be5a0da51d
 
 // 根据目录获取到的link拼接URL 传入时间戳参数t 16位加密k(暂未破解)
+// Y2fht@6Ag4%9QjUcj5JX + /chapter + /目录txt地址 + 时间戳   整体md5 取其 中间16位
+// Y2fht@6Ag4%9QjUcj5JX/chapter/http%3A%2F%2Fread.qidian.com%2Fchapter%2FqEnX4gQ5oyVqqtWmhQLkJA2%2FTNfZ6IjFKdr4p8iEw--PPw21494849682
+//1494849682 是当前时间 + 2个小时  t也是如此
 #define Interface_Chapter @"" //http://chapter2.zhuishushenqi.com/chapter/http%3A%2F%2Fbook.my716.com%2FgetBooks.aspx%3Fmethod%3Dcontent%26bookId%3D634203%26chapterFile%3DU_719138_201607181024156331_0132_1.txt?k=9298f825cbdbfe38&t=1493717028
 
 #endif /* ApiDefine_h */
