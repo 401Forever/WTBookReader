@@ -60,6 +60,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    WTBookViewModel *bookViewModel = [[WTBookViewModel alloc] initWithModel:[self.rankDetailViewModel modelAtIndexPath:indexPath]];
+    WTTempBookVC *bookVC = [WTTempBookVC bookVCWithViewModel:bookViewModel];
+    [self.navigationController pushViewController:bookVC animated:YES];
 }
 
 
@@ -81,17 +84,17 @@
 }
 
 
-#pragma mark - Private Function
-
-- (void)fetchHeaderData{
-    @weakify(self);
-    [[self.rankDetailViewModel.canFetchHeaderDataSignal filter:^BOOL(NSNumber *value) {
-        return [value boolValue];
-    }] subscribeNext:^(id x) {
-        @strongify(self);
-        [self.rankTableView.mj_header beginRefreshing];
-    }];
-}
+//#pragma mark - Private Function
+//
+//- (void)fetchHeaderData{
+//    @weakify(self);
+//    [[self.rankDetailViewModel.canFetchHeaderDataSignal filter:^BOOL(NSNumber *value) {
+//        return [value boolValue];
+//    }] subscribeNext:^(id x) {
+//        @strongify(self);
+//        [self.rankTableView.mj_header beginRefreshing];
+//    }];
+//}
 
 #pragma mark - Setter And Getter
 - (WTRankDetailViewModel *)rankDetailViewModel{

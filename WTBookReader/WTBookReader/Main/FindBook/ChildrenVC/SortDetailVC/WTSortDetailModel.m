@@ -7,6 +7,8 @@
 //
 
 #import "WTSortDetailModel.h"
+#import "NSString+URL.h"
+#define NotNull(str) (str.length ? str : @"无")
 
 @implementation WTSortDetailModel
 + (NSDictionary *)objectClassInArray{
@@ -17,11 +19,11 @@
 @end
 @implementation WTSortDetailItemModel
 - (NSString *)authorAndMajorCate{
-    return [NSString stringWithFormat:@"%@ | %@",self.author, self.majorCate];
+    return [NSString stringWithFormat:@"%@ | %@",NotNull(self.author), NotNull(self.majorCate)];
 }
 
 - (NSString *)latelyFollowerAndretentionRatio{
-    return [NSString stringWithFormat:@"%@ | %.2lf%%",self.latelyFollower, [self.retentionRatio floatValue]];
+    return [NSString stringWithFormat:@"%@ | %.2lf%%",NotNull(self.latelyFollower), [self.retentionRatio floatValue]];
 }
 
 - (RACSignal *)fetchImageSignal{
@@ -34,6 +36,7 @@
         NSString *imageUrl = [NSString stringWithFormat:@"%@%@",HostString,self.cover];
         if ([self.cover hasPrefix:@"/agent/"]) {
             imageUrl = [NSString stringWithFormat:@"%@",[self.cover stringByReplacingOccurrencesOfString:@"/agent/" withString:@""]];
+            imageUrl = [imageUrl URLDecodedString];
         }
         NSURL *url = [NSURL URLWithString:imageUrl];
        [[SDWebImageManager sharedManager] downloadImageWithURL:url options:0 progress:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
