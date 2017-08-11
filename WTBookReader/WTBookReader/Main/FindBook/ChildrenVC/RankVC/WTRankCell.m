@@ -21,14 +21,14 @@
 @implementation WTRankHeaderView
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithReuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+        self.contentView.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
         
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.opaque = YES;
         titleLabel.clipsToBounds = YES;
         titleLabel.layer.masksToBounds = YES;
         titleLabel.font = [UIFont systemFontOfSize:15];
-        titleLabel.textColor = [UIColor whiteColor];
+        titleLabel.textColor = [UIColor grayColor];
         titleLabel.backgroundColor = self.contentView.backgroundColor;
         [self addSubview:titleLabel];
         self.titleLabel = titleLabel;

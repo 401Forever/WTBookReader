@@ -23,7 +23,7 @@
 		1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F55A61EADABE6003A5535 /* WTFindBookVC.m */; };
 		1F4F55AB1EADAC07003A5535 /* WTFindBookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F55AA1EADAC07003A5535 /* WTFindBookViewModel.m */; };
 		1F4F55AE1EADAC7D003A5535 /* WTFindBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F55AD1EADAC7D003A5535 /* WTFindBookModel.m */; };
-		1F5DF0B81F3C597B00013209 /* NSString+URL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0B71F3C597B00013209 /* NSString+URL.m */; };
+		1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0B71F3C597B00013209 /* NSString+Common.m */; };
 		1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0BB1F3C5EA000013209 /* WTTempBookVC.m */; };
 		1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0BE1F3C5ECC00013209 /* WTBookViewModel.m */; };
 		1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */; };
@@ -106,8 +106,8 @@
 		1F4F55B41EAE02C8003A5535 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/WTBookReader-bocvaoyrvvcnpgezxtqtqsozxdgf/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		1F4F55B51EAE02C8003A5535 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "../../../Library/Developer/Xcode/DerivedData/WTBookReader-bocvaoyrvvcnpgezxtqtqsozxdgf/Build/Products/Debug-iphonesimulator/ReactiveCocoa/ReactiveCocoa.framework"; sourceTree = "<group>"; };
 		1F4F55B61EAE02C8003A5535 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/WTBookReader-bocvaoyrvvcnpgezxtqtqsozxdgf/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
-		1F5DF0B61F3C597B00013209 /* NSString+URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URL.h"; sourceTree = "<group>"; };
-		1F5DF0B71F3C597B00013209 /* NSString+URL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URL.m"; sourceTree = "<group>"; };
+		1F5DF0B61F3C597B00013209 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		1F5DF0B71F3C597B00013209 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		1F5DF0BA1F3C5EA000013209 /* WTTempBookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTempBookVC.h; sourceTree = "<group>"; };
 		1F5DF0BB1F3C5EA000013209 /* WTTempBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTempBookVC.m; sourceTree = "<group>"; };
 		1F5DF0BD1F3C5ECC00013209 /* WTBookViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookViewModel.h; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 				1F3831021EB828C000784AC8 /* NSArray+Log.m */,
 				1F3831031EB828C000784AC8 /* NSDictionary+Log.h */,
 				1F3831041EB828C000784AC8 /* NSDictionary+Log.m */,
-				1F5DF0B61F3C597B00013209 /* NSString+URL.h */,
-				1F5DF0B71F3C597B00013209 /* NSString+URL.m */,
+				1F5DF0B61F3C597B00013209 /* NSString+Common.h */,
+				1F5DF0B71F3C597B00013209 /* NSString+Common.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -637,7 +637,7 @@
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
 				1F3DBEA21EB1CA810036E483 /* WTSortDetailModel.m in Sources */,
 				1F6E3A711EC05CBA00CFD75A /* WTRankSingleDetailVC.m in Sources */,
-				1F5DF0B81F3C597B00013209 /* NSString+URL.m in Sources */,
+				1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */,
 				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
 				1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */,
 				1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */,

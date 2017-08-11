@@ -29,3 +29,14 @@
 /** 未知？ 例如0 估计为bool */
 @property(nonatomic,copy) NSString *unreadble;
 @end
+
+
+@interface WTBookChapterContentModel : NSObject
+/** 章节标题 */
+@property(nonatomic,copy) NSString *title;
+/** 章节内容 */
+@property(nonatomic,copy) NSString *body;
+/** 是否加载成功 */
+@property(nonatomic,copy) NSString *ok;
+
+@end

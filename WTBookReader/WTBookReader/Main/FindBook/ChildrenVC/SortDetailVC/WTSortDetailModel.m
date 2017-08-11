@@ -7,7 +7,7 @@
 //
 
 #import "WTSortDetailModel.h"
-#import "NSString+URL.h"
+#import "NSString+Common.h"
 #define NotNull(str) (str.length ? str : @"无")
 
 @implementation WTSortDetailModel

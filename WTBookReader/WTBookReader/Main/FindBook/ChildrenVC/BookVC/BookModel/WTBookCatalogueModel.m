@@ -18,3 +18,6 @@
 
 @implementation WTBookChapterModel
 @end
+
+@implementation WTBookChapterContentModel
+@end
