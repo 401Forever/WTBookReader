@@ -36,6 +36,17 @@
 		1F6E3A711EC05CBA00CFD75A /* WTRankSingleDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A701EC05CBA00CFD75A /* WTRankSingleDetailVC.m */; };
 		1F6E3A741EC060EE00CFD75A /* WTRankDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A731EC060EE00CFD75A /* WTRankDetailViewModel.m */; };
 		1F6E3A771EC06D9900CFD75A /* WTRankDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A761EC06D9900CFD75A /* WTRankDetailModel.m */; };
+		1F78FE641F4193F20007FF27 /* WTReadParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE631F4193F20007FF27 /* WTReadParser.m */; };
+		1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE681F41989E0007FF27 /* WTReadPageViewController.m */; };
+		1F78FE6C1F419D080007FF27 /* WTReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE6B1F419D080007FF27 /* WTReadViewController.m */; };
+		1F78FE701F419E150007FF27 /* WTReadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE6F1F419E150007FF27 /* WTReadView.m */; };
+		1F78FE731F419F030007FF27 /* WTMagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE721F419F030007FF27 /* WTMagnifierView.m */; };
+		1F78FE761F41A3B90007FF27 /* WTReadUtilites.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE751F41A3B90007FF27 /* WTReadUtilites.m */; };
+		1F78FE791F41A5230007FF27 /* WTNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE781F41A5230007FF27 /* WTNoteModel.m */; };
+		1F78FE7C1F41AACC0007FF27 /* WTRecordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE7B1F41AACC0007FF27 /* WTRecordModel.m */; };
+		1F78FE7F1F41AB120007FF27 /* WTChapterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE7E1F41AB120007FF27 /* WTChapterModel.m */; };
+		1F78FE821F41ACF10007FF27 /* WTReadPageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F78FE811F41ACF10007FF27 /* WTReadPageViewModel.m */; };
+		1F824F6C1F418BEC00821ED6 /* WTReadConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F824F6B1F418BEC00821ED6 /* WTReadConfig.m */; };
 		1FD0FE121EAB30DB007FECA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE111EAB30DB007FECA6 /* main.m */; };
 		1FD0FE151EAB30DC007FECA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE141EAB30DC007FECA6 /* AppDelegate.m */; };
 		1FD0FE1B1EAB30DC007FECA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0FE191EAB30DC007FECA6 /* Main.storyboard */; };
@@ -132,6 +143,28 @@
 		1F6E3A731EC060EE00CFD75A /* WTRankDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRankDetailViewModel.m; sourceTree = "<group>"; };
 		1F6E3A751EC06D9900CFD75A /* WTRankDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRankDetailModel.h; sourceTree = "<group>"; };
 		1F6E3A761EC06D9900CFD75A /* WTRankDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRankDetailModel.m; sourceTree = "<group>"; };
+		1F78FE621F4193F20007FF27 /* WTReadParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadParser.h; sourceTree = "<group>"; };
+		1F78FE631F4193F20007FF27 /* WTReadParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadParser.m; sourceTree = "<group>"; };
+		1F78FE671F41989E0007FF27 /* WTReadPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadPageViewController.h; sourceTree = "<group>"; };
+		1F78FE681F41989E0007FF27 /* WTReadPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadPageViewController.m; sourceTree = "<group>"; };
+		1F78FE6A1F419D080007FF27 /* WTReadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadViewController.h; sourceTree = "<group>"; };
+		1F78FE6B1F419D080007FF27 /* WTReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadViewController.m; sourceTree = "<group>"; };
+		1F78FE6E1F419E150007FF27 /* WTReadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadView.h; sourceTree = "<group>"; };
+		1F78FE6F1F419E150007FF27 /* WTReadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadView.m; sourceTree = "<group>"; };
+		1F78FE711F419F030007FF27 /* WTMagnifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMagnifierView.h; sourceTree = "<group>"; };
+		1F78FE721F419F030007FF27 /* WTMagnifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMagnifierView.m; sourceTree = "<group>"; };
+		1F78FE741F41A3B90007FF27 /* WTReadUtilites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadUtilites.h; sourceTree = "<group>"; };
+		1F78FE751F41A3B90007FF27 /* WTReadUtilites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadUtilites.m; sourceTree = "<group>"; };
+		1F78FE771F41A5230007FF27 /* WTNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNoteModel.h; sourceTree = "<group>"; };
+		1F78FE781F41A5230007FF27 /* WTNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNoteModel.m; sourceTree = "<group>"; };
+		1F78FE7A1F41AACC0007FF27 /* WTRecordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRecordModel.h; sourceTree = "<group>"; };
+		1F78FE7B1F41AACC0007FF27 /* WTRecordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRecordModel.m; sourceTree = "<group>"; };
+		1F78FE7D1F41AB120007FF27 /* WTChapterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTChapterModel.h; sourceTree = "<group>"; };
+		1F78FE7E1F41AB120007FF27 /* WTChapterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTChapterModel.m; sourceTree = "<group>"; };
+		1F78FE801F41ACF10007FF27 /* WTReadPageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadPageViewModel.h; sourceTree = "<group>"; };
+		1F78FE811F41ACF10007FF27 /* WTReadPageViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadPageViewModel.m; sourceTree = "<group>"; };
+		1F824F6A1F418BEC00821ED6 /* WTReadConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTReadConfig.h; sourceTree = "<group>"; };
+		1F824F6B1F418BEC00821ED6 /* WTReadConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadConfig.m; sourceTree = "<group>"; };
 		1FD0FE0D1EAB30DB007FECA6 /* WTBookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTBookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD0FE111EAB30DB007FECA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1FD0FE131EAB30DC007FECA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -332,6 +365,67 @@
 			path = RankDetailVC;
 			sourceTree = "<group>";
 		};
+		1F78FE651F4196EA0007FF27 /* ReadModel */ = {
+			isa = PBXGroup;
+			children = (
+				1F78FE771F41A5230007FF27 /* WTNoteModel.h */,
+				1F78FE781F41A5230007FF27 /* WTNoteModel.m */,
+				1F78FE7A1F41AACC0007FF27 /* WTRecordModel.h */,
+				1F78FE7B1F41AACC0007FF27 /* WTRecordModel.m */,
+				1F78FE7D1F41AB120007FF27 /* WTChapterModel.h */,
+				1F78FE7E1F41AB120007FF27 /* WTChapterModel.m */,
+			);
+			path = ReadModel;
+			sourceTree = "<group>";
+		};
+		1F78FE661F4198580007FF27 /* ReadVC */ = {
+			isa = PBXGroup;
+			children = (
+				1F78FE671F41989E0007FF27 /* WTReadPageViewController.h */,
+				1F78FE681F41989E0007FF27 /* WTReadPageViewController.m */,
+				1F78FE6A1F419D080007FF27 /* WTReadViewController.h */,
+				1F78FE6B1F419D080007FF27 /* WTReadViewController.m */,
+				1F78FE801F41ACF10007FF27 /* WTReadPageViewModel.h */,
+				1F78FE811F41ACF10007FF27 /* WTReadPageViewModel.m */,
+			);
+			path = ReadVC;
+			sourceTree = "<group>";
+		};
+		1F78FE6D1F419DEB0007FF27 /* ReadView */ = {
+			isa = PBXGroup;
+			children = (
+				1F78FE6E1F419E150007FF27 /* WTReadView.h */,
+				1F78FE6F1F419E150007FF27 /* WTReadView.m */,
+				1F78FE711F419F030007FF27 /* WTMagnifierView.h */,
+				1F78FE721F419F030007FF27 /* WTMagnifierView.m */,
+			);
+			path = ReadView;
+			sourceTree = "<group>";
+		};
+		1F824F681F418A6700821ED6 /* CoreModule */ = {
+			isa = PBXGroup;
+			children = (
+				1F78FE6D1F419DEB0007FF27 /* ReadView */,
+				1F78FE661F4198580007FF27 /* ReadVC */,
+				1F78FE651F4196EA0007FF27 /* ReadModel */,
+				1F824F691F418ACF00821ED6 /* ReadConfig */,
+			);
+			path = CoreModule;
+			sourceTree = "<group>";
+		};
+		1F824F691F418ACF00821ED6 /* ReadConfig */ = {
+			isa = PBXGroup;
+			children = (
+				1F824F6A1F418BEC00821ED6 /* WTReadConfig.h */,
+				1F824F6B1F418BEC00821ED6 /* WTReadConfig.m */,
+				1F78FE621F4193F20007FF27 /* WTReadParser.h */,
+				1F78FE631F4193F20007FF27 /* WTReadParser.m */,
+				1F78FE741F41A3B90007FF27 /* WTReadUtilites.h */,
+				1F78FE751F41A3B90007FF27 /* WTReadUtilites.m */,
+			);
+			path = ReadConfig;
+			sourceTree = "<group>";
+		};
 		1FD0FE041EAB30DA007FECA6 = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +489,7 @@
 		1FD0FE431EAB3199007FECA6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1F824F681F418A6700821ED6 /* CoreModule */,
 				1F4F559A1EAB5479003A5535 /* FindBook */,
 				1F4F55991EAB544B003A5535 /* Bookshelf */,
 				1F4F55971EAB4301003A5535 /* GlobalMacro.h */,
@@ -629,21 +724,29 @@
 				1F4F55A71EADABE6003A5535 /* WTFindBookCell.m in Sources */,
 				1F3831061EB828C000784AC8 /* NSDictionary+Log.m in Sources */,
 				1F07696C1EAF37F500AB695E /* WTNetworkManager.m in Sources */,
+				1F78FE791F41A5230007FF27 /* WTNoteModel.m in Sources */,
 				1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */,
+				1F78FE761F41A3B90007FF27 /* WTReadUtilites.m in Sources */,
 				1F0769621EAF225100AB695E /* WTSortCell.m in Sources */,
 				1F07695F1EAEFC2B00AB695E /* WTSortVC.m in Sources */,
 				1F6E3A631EBDA9A500CFD75A /* WTRankCell.m in Sources */,
 				1F3831051EB828C000784AC8 /* NSArray+Log.m in Sources */,
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
+				1F78FE7C1F41AACC0007FF27 /* WTRecordModel.m in Sources */,
 				1F3DBEA21EB1CA810036E483 /* WTSortDetailModel.m in Sources */,
 				1F6E3A711EC05CBA00CFD75A /* WTRankSingleDetailVC.m in Sources */,
+				1F824F6C1F418BEC00821ED6 /* WTReadConfig.m in Sources */,
 				1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */,
 				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
+				1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */,
 				1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */,
+				1F78FE7F1F41AB120007FF27 /* WTChapterModel.m in Sources */,
 				1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */,
 				1FD0FE151EAB30DC007FECA6 /* AppDelegate.m in Sources */,
+				1F78FE6C1F419D080007FF27 /* WTReadViewController.m in Sources */,
 				1F6E3A691EBDA9C200CFD75A /* WTRankViewModel.m in Sources */,
 				1F6E3A741EC060EE00CFD75A /* WTRankDetailViewModel.m in Sources */,
+				1F78FE821F41ACF10007FF27 /* WTReadPageViewModel.m in Sources */,
 				1F3DBE9C1EB1C44B0036E483 /* WTSortDetailViewModel.m in Sources */,
 				1F6E3A6E1EC05C9A00CFD75A /* WTRankMutilDetailVC.m in Sources */,
 				1F4F55AB1EADAC07003A5535 /* WTFindBookViewModel.m in Sources */,
@@ -651,8 +754,11 @@
 				1F6E3A601EBDA98200CFD75A /* WTRankVC.m in Sources */,
 				1F6E3A771EC06D9900CFD75A /* WTRankDetailModel.m in Sources */,
 				1F5DF0C91F3C67B100013209 /* WTBookCatalogueModel.m in Sources */,
+				1F78FE641F4193F20007FF27 /* WTReadParser.m in Sources */,
+				1F78FE731F419F030007FF27 /* WTMagnifierView.m in Sources */,
 				1F3DBE951EB087050036E483 /* WTSortDetailVC.m in Sources */,
 				1F0769691EAF32F700AB695E /* WTSortViewModel.m in Sources */,
+				1F78FE701F419E150007FF27 /* WTReadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

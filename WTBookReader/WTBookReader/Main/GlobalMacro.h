@@ -18,4 +18,6 @@
 #define MainScreenWidth [UIScreen mainScreen].bounds.size.width
 #define MainScreenHeight [UIScreen mainScreen].bounds.size.height
 
+
+#define ViewSize(view)  (view.frame.size)
 #endif /* GlobalMacro_h */
