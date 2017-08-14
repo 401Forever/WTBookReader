@@ -48,7 +48,7 @@
     }
     _readView = [[WTReadViewController alloc] init];
     _readView.recordModel = _viewModel.recordModel;
-    _readView.content = _viewModel.tempContent;
+    _readView.content = [_viewModel.tempChapter stringOfPage:page];
 //    _readView.content = [_model.chapters[chapter] stringOfPage:page];
     _readView.delegate = self;
     NSLog(@"_readGreate");
@@ -64,6 +64,15 @@
     _viewModel.recordModel.page = page;
 //    _model.font = [NSNumber numberWithFloat:[WTReadConfig shareInstance].fontSize];
 //    [LSYReadModel updateLocalModel:_model url:_resourceURL];
+}
+
+-(BOOL)prefersStatusBarHidden
+{
+    return !_showBar;
+}
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - WTReadViewControllerDelegate
@@ -89,20 +98,20 @@
 #pragma mark - UIPageViewControllerDelegate
 - (void)pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-//    if (!completed) {
-//        LSYReadViewController *readView = previousViewControllers.firstObject;
-//        _readView = readView;
-//        _page = readView.recordModel.page;
-//        _chapter = readView.recordModel.chapter;
-//    }
-//    else{
-//        [self updateReadModelWithChapter:_chapter page:_page];
-//    }
+    if (!completed) {
+        WTReadViewController *readView = previousViewControllers.firstObject;
+        _readView = readView;
+        _page = readView.recordModel.page;
+        _chapter = readView.recordModel.chapter;
+    }
+    else{
+        [self updateReadModelWithChapter:_chapter page:_page];
+    }
 }
 - (void)pageViewController:(UIPageViewController *)pageViewController willTransitionToViewControllers:(NSArray<UIViewController *> *)pendingViewControllers
 {
-//    _chapter = _chapterChange;
-//    _page = _pageChange;
+    _chapter = _chapterChange;
+    _page = _pageChange;
 }
 -(void)viewDidLayoutSubviews
 {

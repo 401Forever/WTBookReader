@@ -10,5 +10,5 @@
 #import "WTRecordModel.h"
 @interface WTReadPageViewModel : NSObject
 @property(nonatomic,strong) WTRecordModel *recordModel;
-@property(nonatomic,copy) NSString *tempContent;
+@property(nonatomic,strong) WTChapterModel *tempChapter;
 @end

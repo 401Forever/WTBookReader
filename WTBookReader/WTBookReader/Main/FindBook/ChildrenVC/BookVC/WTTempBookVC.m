@@ -30,10 +30,12 @@
         [[self.bookViewModel.fetchBookCatalogue execute:nil] subscribeNext:^(id x) {
             [[self.bookViewModel.fetchBookChapterData execute:nil] subscribeNext:^(WTBookChapterContentModel *chapter) {
                 WTReadPageViewModel *viewModel = [[WTReadPageViewModel alloc] init];
-                viewModel.tempContent = chapter.body;
+                WTChapterModel *chapterModel = [[WTChapterModel alloc] init];
+                chapterModel.content = chapter.body;
+                viewModel.tempChapter = chapterModel;
                 WTReadPageViewController *bookVC = [[WTReadPageViewController alloc] init];
                 bookVC.viewModel = viewModel;
-                [self.navigationController pushViewController:bookVC animated:YES];
+                [self presentViewController:bookVC animated:YES completion:nil];
             }];
         }];
     }];
