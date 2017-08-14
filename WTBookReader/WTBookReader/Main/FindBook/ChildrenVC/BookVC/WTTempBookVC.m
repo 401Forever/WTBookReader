@@ -7,6 +7,7 @@
 //
 
 #import "WTTempBookVC.h"
+#import "WTReadPageViewController.h"
 
 @interface WTTempBookVC ()
 @property(nonatomic,strong) WTBookViewModel *bookViewModel;
@@ -27,8 +28,12 @@
     [[self.bookViewModel.requestBookSourceCommand execute:nil] subscribeNext:^(id x) {
         @strongify(self)
         [[self.bookViewModel.fetchBookCatalogue execute:nil] subscribeNext:^(id x) {
-            [[self.bookViewModel.fetchBookChapterData execute:nil] subscribeNext:^(id x) {
-                
+            [[self.bookViewModel.fetchBookChapterData execute:nil] subscribeNext:^(WTBookChapterContentModel *chapter) {
+                WTReadPageViewModel *viewModel = [[WTReadPageViewModel alloc] init];
+                viewModel.tempContent = chapter.body;
+                WTReadPageViewController *bookVC = [[WTReadPageViewController alloc] init];
+                bookVC.viewModel = viewModel;
+                [self.navigationController pushViewController:bookVC animated:YES];
             }];
         }];
     }];

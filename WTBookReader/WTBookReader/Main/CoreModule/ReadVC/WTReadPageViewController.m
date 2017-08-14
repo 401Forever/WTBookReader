@@ -35,6 +35,8 @@
 - (void)prepareUI{
     self.dataSource = self;
     self.delegate   = self;
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self setViewControllers:@[[self readViewWithChapter:_viewModel.recordModel.chapter page:_viewModel.recordModel.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 -(WTReadViewController *)readViewWithChapter:(NSUInteger)chapter page:(NSUInteger)page{
@@ -45,7 +47,8 @@
         [_viewModel.recordModel.chapterModel updateFont];
     }
     _readView = [[WTReadViewController alloc] init];
-//    _readView.recordModel = _model.record;
+    _readView.recordModel = _viewModel.recordModel;
+    _readView.content = _viewModel.tempContent;
 //    _readView.content = [_model.chapters[chapter] stringOfPage:page];
     _readView.delegate = self;
     NSLog(@"_readGreate");

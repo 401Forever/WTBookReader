@@ -10,6 +10,7 @@
 #import "WTReadParser.h"
 #import "WTReadConfig.h"
 #import "WTReadView.h"
+#import "WTRecordModel.h"
 
 @class WTReadViewController;
 @protocol WTReadViewControllerDelegate <NSObject>
@@ -19,7 +20,7 @@
 
 @interface WTReadViewController : UIViewController
 @property (nonatomic,strong) NSString *content; //显示的内容
-//@property (nonatomic,strong) LSYRecordModel *recordModel;   //阅读进度
+@property (nonatomic,strong) WTRecordModel *recordModel;   //阅读进度
 @property (nonatomic,strong) WTReadView *readView;
 @property (nonatomic,weak) id<WTReadViewControllerDelegate>delegate;
 @end
