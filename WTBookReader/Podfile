@@ -9,4 +9,5 @@ pod 'SDWebImage', '~> 3.7.1'
 pod 'MBProgressHUD', '~> 0.9'
 pod 'MJExtension', '~> 2.5.8'
 pod 'MJRefresh'
+pod 'Realm'
 end

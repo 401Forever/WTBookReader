@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5F4F226C31B815AEFFEAF08276A03A18'
+               BlueprintIdentifier = '19D1F12BDA73E69BE865C1DAFDEDE732'
                BlueprintName = 'Pods-WTBookReader'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-WTBookReader.a'>
