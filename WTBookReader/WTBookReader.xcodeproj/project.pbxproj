@@ -28,6 +28,15 @@
 		1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0BE1F3C5ECC00013209 /* WTBookViewModel.m */; };
 		1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */; };
 		1F5DF0C91F3C67B100013209 /* WTBookCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0C81F3C67B100013209 /* WTBookCatalogueModel.m */; };
+		1F6CB1FC1F43E3520052CD59 /* WTMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB1FB1F43E3520052CD59 /* WTMenuView.m */; };
+		1F6CB1FF1F43E3A10052CD59 /* WTTopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB1FE1F43E3A10052CD59 /* WTTopMenuView.m */; };
+		1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2011F43E4480052CD59 /* WTBottomMenuView.m */; };
+		1F6CB2051F43E6A50052CD59 /* WTCatalogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2041F43E6A50052CD59 /* WTCatalogViewController.m */; };
+		1F6CB2091F43EC350052CD59 /* WTViewPagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2081F43EC350052CD59 /* WTViewPagerVC.m */; };
+		1F6CB20D1F43EFC00052CD59 /* WTChapterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB20C1F43EFC00052CD59 /* WTChapterVC.m */; };
+		1F6CB2101F43F0330052CD59 /* WTNoteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB20F1F43F0330052CD59 /* WTNoteVC.m */; };
+		1F6CB2131F43F0A30052CD59 /* WTMarkVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2121F43F0A30052CD59 /* WTMarkVC.m */; };
+		1F6CB2161F43F6780052CD59 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2151F43F6780052CD59 /* UIImage+ImageEffects.m */; };
 		1F6E3A601EBDA98200CFD75A /* WTRankVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A5F1EBDA98200CFD75A /* WTRankVC.m */; };
 		1F6E3A631EBDA9A500CFD75A /* WTRankCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A621EBDA9A500CFD75A /* WTRankCell.m */; };
 		1F6E3A661EBDA9B700CFD75A /* WTRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6E3A651EBDA9B700CFD75A /* WTRankModel.m */; };
@@ -127,6 +136,24 @@
 		1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookSourceModel.m; sourceTree = "<group>"; };
 		1F5DF0C71F3C67B100013209 /* WTBookCatalogueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookCatalogueModel.h; sourceTree = "<group>"; };
 		1F5DF0C81F3C67B100013209 /* WTBookCatalogueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookCatalogueModel.m; sourceTree = "<group>"; };
+		1F6CB1FA1F43E3520052CD59 /* WTMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMenuView.h; sourceTree = "<group>"; };
+		1F6CB1FB1F43E3520052CD59 /* WTMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMenuView.m; sourceTree = "<group>"; };
+		1F6CB1FD1F43E3A10052CD59 /* WTTopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTopMenuView.h; sourceTree = "<group>"; };
+		1F6CB1FE1F43E3A10052CD59 /* WTTopMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTopMenuView.m; sourceTree = "<group>"; };
+		1F6CB2001F43E4480052CD59 /* WTBottomMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBottomMenuView.h; sourceTree = "<group>"; };
+		1F6CB2011F43E4480052CD59 /* WTBottomMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBottomMenuView.m; sourceTree = "<group>"; };
+		1F6CB2031F43E6A50052CD59 /* WTCatalogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCatalogViewController.h; sourceTree = "<group>"; };
+		1F6CB2041F43E6A50052CD59 /* WTCatalogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCatalogViewController.m; sourceTree = "<group>"; };
+		1F6CB2071F43EC350052CD59 /* WTViewPagerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTViewPagerVC.h; sourceTree = "<group>"; };
+		1F6CB2081F43EC350052CD59 /* WTViewPagerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTViewPagerVC.m; sourceTree = "<group>"; };
+		1F6CB20B1F43EFC00052CD59 /* WTChapterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTChapterVC.h; sourceTree = "<group>"; };
+		1F6CB20C1F43EFC00052CD59 /* WTChapterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTChapterVC.m; sourceTree = "<group>"; };
+		1F6CB20E1F43F0330052CD59 /* WTNoteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNoteVC.h; sourceTree = "<group>"; };
+		1F6CB20F1F43F0330052CD59 /* WTNoteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNoteVC.m; sourceTree = "<group>"; };
+		1F6CB2111F43F0A30052CD59 /* WTMarkVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMarkVC.h; sourceTree = "<group>"; };
+		1F6CB2121F43F0A30052CD59 /* WTMarkVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMarkVC.m; sourceTree = "<group>"; };
+		1F6CB2141F43F6780052CD59 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		1F6CB2151F43F6780052CD59 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		1F6E3A5E1EBDA98200CFD75A /* WTRankVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRankVC.h; sourceTree = "<group>"; };
 		1F6E3A5F1EBDA98200CFD75A /* WTRankVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTRankVC.m; sourceTree = "<group>"; };
 		1F6E3A611EBDA9A500CFD75A /* WTRankCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTRankCell.h; sourceTree = "<group>"; };
@@ -244,6 +271,8 @@
 		1F3831001EB8289800784AC8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1F6CB2141F43F6780052CD59 /* UIImage+ImageEffects.h */,
+				1F6CB2151F43F6780052CD59 /* UIImage+ImageEffects.m */,
 				1F3831011EB828C000784AC8 /* NSArray+Log.h */,
 				1F3831021EB828C000784AC8 /* NSArray+Log.m */,
 				1F3831031EB828C000784AC8 /* NSDictionary+Log.h */,
@@ -335,6 +364,19 @@
 			path = BookModel;
 			sourceTree = "<group>";
 		};
+		1F6CB20A1F43EF9C0052CD59 /* CatalogVC */ = {
+			isa = PBXGroup;
+			children = (
+				1F6CB20B1F43EFC00052CD59 /* WTChapterVC.h */,
+				1F6CB20C1F43EFC00052CD59 /* WTChapterVC.m */,
+				1F6CB20E1F43F0330052CD59 /* WTNoteVC.h */,
+				1F6CB20F1F43F0330052CD59 /* WTNoteVC.m */,
+				1F6CB2111F43F0A30052CD59 /* WTMarkVC.h */,
+				1F6CB2121F43F0A30052CD59 /* WTMarkVC.m */,
+			);
+			path = CatalogVC;
+			sourceTree = "<group>";
+		};
 		1F6E3A5D1EBDA94800CFD75A /* RankVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,12 +423,17 @@
 		1F78FE661F4198580007FF27 /* ReadVC */ = {
 			isa = PBXGroup;
 			children = (
+				1F6CB20A1F43EF9C0052CD59 /* CatalogVC */,
 				1F78FE671F41989E0007FF27 /* WTReadPageViewController.h */,
 				1F78FE681F41989E0007FF27 /* WTReadPageViewController.m */,
 				1F78FE6A1F419D080007FF27 /* WTReadViewController.h */,
 				1F78FE6B1F419D080007FF27 /* WTReadViewController.m */,
 				1F78FE801F41ACF10007FF27 /* WTReadPageViewModel.h */,
 				1F78FE811F41ACF10007FF27 /* WTReadPageViewModel.m */,
+				1F6CB2031F43E6A50052CD59 /* WTCatalogViewController.h */,
+				1F6CB2041F43E6A50052CD59 /* WTCatalogViewController.m */,
+				1F6CB2071F43EC350052CD59 /* WTViewPagerVC.h */,
+				1F6CB2081F43EC350052CD59 /* WTViewPagerVC.m */,
 			);
 			path = ReadVC;
 			sourceTree = "<group>";
@@ -398,6 +445,12 @@
 				1F78FE6F1F419E150007FF27 /* WTReadView.m */,
 				1F78FE711F419F030007FF27 /* WTMagnifierView.h */,
 				1F78FE721F419F030007FF27 /* WTMagnifierView.m */,
+				1F6CB1FA1F43E3520052CD59 /* WTMenuView.h */,
+				1F6CB1FB1F43E3520052CD59 /* WTMenuView.m */,
+				1F6CB1FD1F43E3A10052CD59 /* WTTopMenuView.h */,
+				1F6CB1FE1F43E3A10052CD59 /* WTTopMenuView.m */,
+				1F6CB2001F43E4480052CD59 /* WTBottomMenuView.h */,
+				1F6CB2011F43E4480052CD59 /* WTBottomMenuView.m */,
 			);
 			path = ReadView;
 			sourceTree = "<group>";
@@ -724,24 +777,31 @@
 				1F4F55A71EADABE6003A5535 /* WTFindBookCell.m in Sources */,
 				1F3831061EB828C000784AC8 /* NSDictionary+Log.m in Sources */,
 				1F07696C1EAF37F500AB695E /* WTNetworkManager.m in Sources */,
+				1F6CB2161F43F6780052CD59 /* UIImage+ImageEffects.m in Sources */,
 				1F78FE791F41A5230007FF27 /* WTNoteModel.m in Sources */,
 				1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */,
 				1F78FE761F41A3B90007FF27 /* WTReadUtilites.m in Sources */,
+				1F6CB20D1F43EFC00052CD59 /* WTChapterVC.m in Sources */,
 				1F0769621EAF225100AB695E /* WTSortCell.m in Sources */,
 				1F07695F1EAEFC2B00AB695E /* WTSortVC.m in Sources */,
 				1F6E3A631EBDA9A500CFD75A /* WTRankCell.m in Sources */,
 				1F3831051EB828C000784AC8 /* NSArray+Log.m in Sources */,
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
+				1F6CB2101F43F0330052CD59 /* WTNoteVC.m in Sources */,
 				1F78FE7C1F41AACC0007FF27 /* WTRecordModel.m in Sources */,
+				1F6CB2131F43F0A30052CD59 /* WTMarkVC.m in Sources */,
 				1F3DBEA21EB1CA810036E483 /* WTSortDetailModel.m in Sources */,
 				1F6E3A711EC05CBA00CFD75A /* WTRankSingleDetailVC.m in Sources */,
+				1F6CB1FF1F43E3A10052CD59 /* WTTopMenuView.m in Sources */,
 				1F824F6C1F418BEC00821ED6 /* WTReadConfig.m in Sources */,
 				1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */,
 				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
+				1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */,
 				1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */,
 				1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */,
 				1F78FE7F1F41AB120007FF27 /* WTChapterModel.m in Sources */,
 				1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */,
+				1F6CB1FC1F43E3520052CD59 /* WTMenuView.m in Sources */,
 				1FD0FE151EAB30DC007FECA6 /* AppDelegate.m in Sources */,
 				1F78FE6C1F419D080007FF27 /* WTReadViewController.m in Sources */,
 				1F6E3A691EBDA9C200CFD75A /* WTRankViewModel.m in Sources */,
@@ -751,6 +811,7 @@
 				1F6E3A6E1EC05C9A00CFD75A /* WTRankMutilDetailVC.m in Sources */,
 				1F4F55AB1EADAC07003A5535 /* WTFindBookViewModel.m in Sources */,
 				1FD0FE121EAB30DB007FECA6 /* main.m in Sources */,
+				1F6CB2051F43E6A50052CD59 /* WTCatalogViewController.m in Sources */,
 				1F6E3A601EBDA98200CFD75A /* WTRankVC.m in Sources */,
 				1F6E3A771EC06D9900CFD75A /* WTRankDetailModel.m in Sources */,
 				1F5DF0C91F3C67B100013209 /* WTBookCatalogueModel.m in Sources */,
@@ -758,6 +819,7 @@
 				1F78FE731F419F030007FF27 /* WTMagnifierView.m in Sources */,
 				1F3DBE951EB087050036E483 /* WTSortDetailVC.m in Sources */,
 				1F0769691EAF32F700AB695E /* WTSortViewModel.m in Sources */,
+				1F6CB2091F43EC350052CD59 /* WTViewPagerVC.m in Sources */,
 				1F78FE701F419E150007FF27 /* WTReadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

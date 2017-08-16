@@ -10,6 +10,6 @@
 #import "WTReadViewController.h"
 #import "WTReadPageViewModel.h"
 
-@interface WTReadPageViewController : UIPageViewController
+@interface WTReadPageViewController : UIViewController
 @property(nonatomic,strong) WTReadPageViewModel *viewModel;
 @end
