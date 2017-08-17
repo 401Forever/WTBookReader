@@ -25,7 +25,7 @@ static  NSString *markCell = @"markCell";
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     [_tabView reloadData];
-    [WTReadModel updateLocalModel:_readModel url:_readModel.resource]; //本地保存
+//    [WTReadModel updateLocalModel:_readModel url:_readModel.resource]; //本地保存
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

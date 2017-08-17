@@ -21,6 +21,7 @@
     #import <SDWebImageManager.h>
 
     #import "WTNetworkManager.h"
+    #import "MBProgressHUD+Ex.h"
 #endif
 
 

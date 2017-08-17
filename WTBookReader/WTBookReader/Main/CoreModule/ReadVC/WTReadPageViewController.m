@@ -7,9 +7,6 @@
 //
 
 #import "WTReadPageViewController.h"
-#import "WTMenuView.h"
-#import "WTCatalogViewController.h"
-#import "UIImage+ImageEffects.h"
 #define AnimationDelay 0.3
 
 @interface WTReadPageViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,WTMenuViewDelegate,UIGestureRecognizerDelegate,WTCatalogViewControllerDelegate,WTReadViewControllerDelegate>
@@ -41,7 +38,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     [self addChildViewController:self.pageViewController];
-    [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+//    [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self.view addGestureRecognizer:({
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showToolMenu)];
@@ -58,6 +55,13 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
+
+- (void)setupUI{
+    [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    self.menuView.recordModel = _model.record;
+    self.catalogVC.readModel = _model;
+}
+
 -(void)addNotes:(NSNotification *)no
 {
     WTNoteModel *noteModel = no.object;
@@ -123,7 +127,7 @@
         _menuView = [[WTMenuView alloc] init];
         _menuView.hidden = YES;
         _menuView.delegate = self;
-        _menuView.recordModel = _model.record;
+//        _menuView.recordModel = _model.record;
     }
     return _menuView;
 }
@@ -132,7 +136,7 @@
 {
     if (!_catalogVC) {
         _catalogVC = [[WTCatalogViewController alloc] init];
-        _catalogVC.readModel = _model;
+//        _catalogVC.readModel = _model;
         _catalogVC.catalogDelegate = self;
     }
     return _catalogVC;
@@ -151,6 +155,30 @@
     }
     return _catalogView;
 }
+
+- (void)setBookModel:(WTSortDetailItemModel *)bookModel{
+    _bookModel = bookModel;
+    @weakify(self);
+    RACTuple *tuple = RACTuplePack(bookModel._id);
+    [[[WTBookDownloader downloader].fetchBookCatalogue execute:tuple]
+                                subscribeNext:^(WTBookCatalogueModel *catalogue) {
+            @strongify(self);
+            RACTuple *chapter = RACTuplePack(catalogue.chapters.firstObject);
+            [[[WTBookDownloader downloader].fetchBookChapterData execute:chapter]
+                        subscribeNext:^(WTBookChapterContentModel *chapter) {
+                            WTReadModel *readModel = [[WTReadModel alloc] initWithContent:nil];
+                            readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
+                
+                            WTChapterModel *chapterModel = readModel.chapters.firstObject;
+                            chapterModel.isDownloadChapter = YES;
+                            chapterModel.content = chapter.body;
+                            self.model = readModel;
+                            [self setupUI];
+            }];
+
+    }];
+}
+
 #pragma mark - CatalogViewController Delegate
 -(void)catalog:(WTCatalogViewController *)catalog didSelectChapter:(NSUInteger)chapter page:(NSUInteger)page
 {
@@ -252,7 +280,6 @@
     BOOL isMarked = FALSE;
     
     WTRecordModel *recordModel = _model.record;
-//    WTRecordModel *recordModel = self.viewModel.recordModel;
     WTChapterModel *chapterModel = recordModel.chapterModel;
     
     NSUInteger startIndex = [chapterModel.pageArray[recordModel.page] integerValue];
@@ -296,12 +323,8 @@
         [_model.record.chapterModel updateFont];
     }
     _readView = [[WTReadViewController alloc] init];
-//    _readView.recordModel = _viewModel.recordModel;
-//    _readView.content = [_viewModel.tempChapter stringOfPage:page];
     _readView.content = [_model.chapters[chapter] stringOfPage:page];
     _readView.delegate = self;
-    NSLog(@"_readGreate");
-    
     return _readView;
 }
 -(void)updateReadModelWithChapter:(NSUInteger)chapter page:(NSUInteger)page
@@ -373,8 +396,10 @@
     _chapterChange = _chapter;
     
     if (_chapterChange==0 &&_pageChange == 0) {
+        [MBProgressHUD showTextMessageInWindow:@"当前已经是第一章节" hideAfterDelay:1.0];
         return nil;
     }
+    
     if (_pageChange==0) {
         _chapterChange--;
         _pageChange = _model.chapters[_chapterChange].pageCount-1;
@@ -383,6 +408,10 @@
         _pageChange--;
     }
     
+    if (!_model.chapters[_chapterChange].isDownloadChapter) {
+        [MBProgressHUD showTextMessageInWindow:@"下一章节未下载" hideAfterDelay:1.0];
+        return nil;
+    }
     return [self readViewWithChapter:_chapterChange page:_pageChange];
 }
 - (nullable UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
@@ -391,6 +420,7 @@
     _pageChange = _page;
     _chapterChange = _chapter;
     if (_pageChange == _model.chapters.lastObject.pageCount-1 && _chapterChange == _model.chapters.count-1) {
+        [MBProgressHUD showTextMessageInWindow:@"当前已经是最后章节" hideAfterDelay:1.0];
         return nil;//最后一个章节的最后一页
     }
     if (_pageChange == _model.chapters[_chapterChange].pageCount-1) {
@@ -400,6 +430,12 @@
     else{
         _pageChange++;
     }
+    
+    if (!_model.chapters[_chapterChange].isDownloadChapter) {
+        [MBProgressHUD showTextMessageInWindow:@"下一章节未下载" hideAfterDelay:1.0];
+        return nil;
+    }
+    
     return [self readViewWithChapter:_chapterChange page:_pageChange];
 }
 

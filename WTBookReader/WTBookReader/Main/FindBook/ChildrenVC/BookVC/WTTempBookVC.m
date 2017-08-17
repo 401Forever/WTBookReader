@@ -33,6 +33,7 @@
                 readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
                 
                 WTChapterModel *chapterModel = readModel.chapters.firstObject;
+                chapterModel.isDownloadChapter = YES;
                 chapterModel.content = chapter.body;
                 
                 WTReadPageViewController *bookVC = [[WTReadPageViewController alloc] init];

@@ -56,6 +56,8 @@
 		1F897D8F1F4592D600CD2DAF /* WTReadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F897D8E1F4592D600CD2DAF /* WTReadModel.m */; };
 		1F897D921F45933100CD2DAF /* WTMarkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F897D911F45933100CD2DAF /* WTMarkModel.m */; };
 		1F897D951F45936900CD2DAF /* WTNoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F897D941F45936900CD2DAF /* WTNoteModel.m */; };
+		1F897D971F459C6F00CD2DAF /* WTReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F897D961F459C6F00CD2DAF /* WTReadViewController.m */; };
+		1F897D9B1F459EF900CD2DAF /* MBProgressHUD+Ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F897D9A1F459EF900CD2DAF /* MBProgressHUD+Ex.m */; };
 		1FA5B5DA1F4530B000B49D5D /* WTBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA5B5D91F4530B000B49D5D /* WTBookDownloader.m */; };
 		1FD0FE121EAB30DB007FECA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE111EAB30DB007FECA6 /* main.m */; };
 		1FD0FE151EAB30DC007FECA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE141EAB30DC007FECA6 /* AppDelegate.m */; };
@@ -194,6 +196,9 @@
 		1F897D911F45933100CD2DAF /* WTMarkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMarkModel.m; sourceTree = "<group>"; };
 		1F897D931F45936900CD2DAF /* WTNoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNoteModel.h; sourceTree = "<group>"; };
 		1F897D941F45936900CD2DAF /* WTNoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNoteModel.m; sourceTree = "<group>"; };
+		1F897D961F459C6F00CD2DAF /* WTReadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTReadViewController.m; sourceTree = "<group>"; };
+		1F897D991F459EF900CD2DAF /* MBProgressHUD+Ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Ex.h"; sourceTree = "<group>"; };
+		1F897D9A1F459EF900CD2DAF /* MBProgressHUD+Ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Ex.m"; sourceTree = "<group>"; };
 		1FA5B5D81F4530B000B49D5D /* WTBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookDownloader.h; sourceTree = "<group>"; };
 		1FA5B5D91F4530B000B49D5D /* WTBookDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookDownloader.m; sourceTree = "<group>"; };
 		1FD0FE0D1EAB30DB007FECA6 /* WTBookReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTBookReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,6 +280,8 @@
 		1F3831001EB8289800784AC8 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1F897D991F459EF900CD2DAF /* MBProgressHUD+Ex.h */,
+				1F897D9A1F459EF900CD2DAF /* MBProgressHUD+Ex.m */,
 				1F6CB2141F43F6780052CD59 /* UIImage+ImageEffects.h */,
 				1F6CB2151F43F6780052CD59 /* UIImage+ImageEffects.m */,
 				1F3831011EB828C000784AC8 /* NSArray+Log.h */,
@@ -435,6 +442,7 @@
 				1F78FE671F41989E0007FF27 /* WTReadPageViewController.h */,
 				1F78FE681F41989E0007FF27 /* WTReadPageViewController.m */,
 				1F78FE6A1F419D080007FF27 /* WTReadViewController.h */,
+				1F897D961F459C6F00CD2DAF /* WTReadViewController.m */,
 				1F6CB2031F43E6A50052CD59 /* WTCatalogViewController.h */,
 				1F6CB2041F43E6A50052CD59 /* WTCatalogViewController.m */,
 				1F6CB2071F43EC350052CD59 /* WTViewPagerVC.h */,
@@ -798,6 +806,7 @@
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
 				1F6CB2101F43F0330052CD59 /* WTNoteVC.m in Sources */,
 				1F78FE7C1F41AACC0007FF27 /* WTRecordModel.m in Sources */,
+				1F897D9B1F459EF900CD2DAF /* MBProgressHUD+Ex.m in Sources */,
 				1F6CB2131F43F0A30052CD59 /* WTMarkVC.m in Sources */,
 				1F3DBEA21EB1CA810036E483 /* WTSortDetailModel.m in Sources */,
 				1F6E3A711EC05CBA00CFD75A /* WTRankSingleDetailVC.m in Sources */,
@@ -805,6 +814,7 @@
 				1F824F6C1F418BEC00821ED6 /* WTReadConfig.m in Sources */,
 				1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */,
 				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
+				1F897D971F459C6F00CD2DAF /* WTReadViewController.m in Sources */,
 				1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */,
 				1F897D951F45936900CD2DAF /* WTNoteModel.m in Sources */,
 				1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */,

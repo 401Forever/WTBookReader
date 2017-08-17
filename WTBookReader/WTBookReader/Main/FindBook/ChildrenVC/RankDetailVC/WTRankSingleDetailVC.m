@@ -60,9 +60,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    WTBookViewModel *bookViewModel = [[WTBookViewModel alloc] initWithModel:[self.rankDetailViewModel modelAtIndexPath:indexPath]];
-    WTTempBookVC *bookVC = [WTTempBookVC bookVCWithViewModel:bookViewModel];
-    [self.navigationController pushViewController:bookVC animated:YES];
+//    WTBookViewModel *bookViewModel = [[WTBookViewModel alloc] initWithModel:[self.rankDetailViewModel modelAtIndexPath:indexPath]];
+//    WTTempBookVC *bookVC = [WTTempBookVC bookVCWithViewModel:bookViewModel];
+//    [self.navigationController pushViewController:bookVC animated:YES];
+    WTReadPageViewController *pageVC = [[WTReadPageViewController alloc] init];
+    pageVC.bookModel = [self.rankDetailViewModel modelAtIndexPath:indexPath];
+    [self presentViewController:pageVC animated:YES completion:nil];
 }
 
 

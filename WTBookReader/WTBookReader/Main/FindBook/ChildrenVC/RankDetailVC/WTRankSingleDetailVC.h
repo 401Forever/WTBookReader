@@ -10,6 +10,7 @@
 #import "WTRankDetailViewModel.h"
 #import "WTSortDetailCell.h"
 #import "WTTempBookVC.h"
+#import "WTReadPageViewController.h"
 
 @interface WTRankSingleDetailVC : UIViewController
 + (instancetype)rankDetailVC;
