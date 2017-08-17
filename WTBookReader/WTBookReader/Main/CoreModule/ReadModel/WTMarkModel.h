@@ -1,5 +1,5 @@
 //
-//  WTNoteModel.h
+//  WTMarkModel.h
 //  WTBookReader
 //
 //  Created by xueban on 2017/8/17.
@@ -8,11 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "WTRecordModel.h"
-@interface WTNoteModel : NSObject
-
+@interface WTMarkModel : NSObject
 @property (nonatomic,strong) NSDate *date;
-@property (nonatomic,copy) NSString *note;
-@property (nonatomic,copy) NSString *content;
 @property (nonatomic,assign) NSUInteger location;
 @property (nonatomic,assign) NSUInteger length;
 @property (nonatomic,assign) NSUInteger chapter;

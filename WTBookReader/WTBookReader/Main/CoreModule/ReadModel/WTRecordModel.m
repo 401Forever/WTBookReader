@@ -9,6 +9,7 @@
 #import "WTRecordModel.h"
 
 @implementation WTRecordModel
+MJCodingImplementation
 -(id)copyWithZone:(NSZone *)zone
 {
     WTRecordModel *recordModel = [[WTRecordModel allocWithZone:zone]init];
@@ -18,20 +19,22 @@
     return recordModel;
 }
 
--(void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:self.chapterModel forKey:@"chapterModel"];
-    [aCoder encodeInteger:self.page forKey:@"page"];
-    [aCoder encodeInteger:self.chapter forKey:@"chapter"];
-    [aCoder encodeInteger:self.chapterCount forKey:@"chapterCount"];
-}
--(id)initWithCoder:(NSCoder *)aDecoder{
-    self = [super init];
-    if (self) {
-        self.chapterModel = [aDecoder decodeObjectForKey:@"chapterModel"];
-        self.page = [aDecoder decodeIntegerForKey:@"page"];
-        self.chapter = [aDecoder decodeIntegerForKey:@"chapter"];
-        self.chapterCount = [aDecoder decodeIntegerForKey:@"chapterCount"];
-    }
-    return self;
-}
+//-(void)encodeWithCoder:(NSCoder *)aCoder{
+//    [aCoder encodeObject:self.chapterModel forKey:@"chapterModel"];
+//    [aCoder encodeInteger:self.page forKey:@"page"];
+//    [aCoder encodeInteger:self.chapter forKey:@"chapter"];
+//    [aCoder encodeInteger:self.chapterCount forKey:@"chapterCount"];
+//    [aCoder encodeObject:self.downloadProgressText forKey:@"downloadProgressText"];
+//}
+//-(id)initWithCoder:(NSCoder *)aDecoder{
+//    self = [super init];
+//    if (self) {
+//        self.chapterModel = [aDecoder decodeObjectForKey:@"chapterModel"];
+//        self.page = [aDecoder decodeIntegerForKey:@"page"];
+//        self.chapter = [aDecoder decodeIntegerForKey:@"chapter"];
+//        self.chapterCount = [aDecoder decodeIntegerForKey:@"chapterCount"];
+//        self.downloadProgressText = [aDecoder decodeObjectForKey:@"downloadProgressText"];
+//    }
+//    return self;
+//}
 @end

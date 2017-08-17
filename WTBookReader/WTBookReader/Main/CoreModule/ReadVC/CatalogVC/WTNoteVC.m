@@ -18,7 +18,7 @@ static  NSString *noteCell = @"noteCell";
 {
     self = [super init];
     if (self) {
-//        [self addObserver:self forKeyPath:@"readModel.notes" options:NSKeyValueObservingOptionNew context:NULL];
+        [self addObserver:self forKeyPath:@"readModel.notes" options:NSKeyValueObservingOptionNew context:NULL];
     }
     return self;
 }
@@ -31,7 +31,7 @@ static  NSString *noteCell = @"noteCell";
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     [_tabView reloadData];
-//    [WTReadModel updateLocalModel:_readModel url:_readModel.resource]; //本地保存
+//    [WTReadModel updateLocalModel:_readModel url:_readModel.resource]; //本地保存 崩溃
 }
 -(UITableView *)tabView
 {
@@ -55,8 +55,8 @@ static  NSString *noteCell = @"noteCell";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:noteCell];
     }
-//    cell.textLabel.text = _readModel.notes[indexPath.row].content;
-//    cell.detailTextLabel.text = _readModel.notes[indexPath.row].note;
+    cell.textLabel.text = _readModel.notes[indexPath.row].content;
+    cell.detailTextLabel.text = _readModel.notes[indexPath.row].note;
     
     return cell;
 }
@@ -68,12 +68,12 @@ static  NSString *noteCell = @"noteCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if ([self.delegate respondsToSelector:@selector(catalog:didSelectChapter:page:)]) {
-//        WTNoteModel *selectedNoteModel = _readModel.notes[indexPath.row];
-//        
-//        NSInteger chapter = selectedNoteModel.chapter;
-//        NSInteger page = [_readModel getPageIndexByOffset:selectedNoteModel.location Chapter:chapter];
-//        
-//        [self.delegate catalog:nil didSelectChapter:chapter page:page];
+        WTNoteModel *selectedNoteModel = _readModel.notes[indexPath.row];
+        
+        NSInteger chapter = selectedNoteModel.chapter;
+        NSInteger page = [_readModel getPageIndexByOffset:selectedNoteModel.location Chapter:chapter];
+        
+        [self.delegate catalog:nil didSelectChapter:chapter page:page];
     }
 }
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,12 +86,12 @@ static  NSString *noteCell = @"noteCell";
 }
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [_readModel.notes removeObjectAtIndex:indexPath.row];
+    [_readModel.notes removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
 }
 -(void)dealloc
 {
-//    [self removeObserver:self forKeyPath:@"readModel.notes"];
+    [self removeObserver:self forKeyPath:@"readModel.notes"];
 }
 -(void)viewDidLayoutSubviews
 {

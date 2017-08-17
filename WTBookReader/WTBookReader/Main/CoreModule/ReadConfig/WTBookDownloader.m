@@ -1,37 +1,39 @@
 //
-//  WTBookViewModel.m
+//  WTBookDownloader.m
 //  WTBookReader
 //
-//  Created by xueban on 2017/8/10.
+//  Created by xueban on 2017/8/17.
 //  Copyright © 2017年 lyw. All rights reserved.
 //
 
-#import "WTBookViewModel.h"
-#import "NSString+Common.h"
-@interface WTBookViewModel()
+#import "WTBookDownloader.h"
 
-@end
+@implementation WTBookDownloader
+static WTBookDownloader *downloader = nil;
++(instancetype)downloader
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        downloader = [[self alloc] init];
+        
+    });
+    return downloader;
+}
 
-@implementation WTBookViewModel
 - (instancetype)init{
     if (self = [super init]) {
         [self initialBind];
     }
     return self;
 }
-- (instancetype)initWithModel:(WTSortDetailItemModel *)model{
-    if (self = [self init]) {
-        _model = model;
-    }
-    return self;
-}
+
 
 - (void)initialBind{
     @weakify(self);
     _requestBookSourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *input) {
-        @strongify(self);
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            NSString *paramStr = [NSString stringWithFormat:@"?view=summary&book=%@",self.model._id];
+            RACTupleUnpack(NSString *bookId) = input;
+            NSString *paramStr = [NSString stringWithFormat:@"?view=summary&book=%@",bookId];
             NSString *url = [NSString stringWithFormat:@"%@/%@/%@",HostString,Interface_BookSource,paramStr];
             [[WTNetworkManager shareNetworkManager] getWithURLString:url
                                                            postValue:nil
@@ -58,9 +60,9 @@
     
     
     _fetchBookCatalogue = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *input) {
-        @strongify(self);
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            NSString *url = [NSString stringWithFormat:@"%@/%@/%@",HostString,Interface_Catalogue,self.model._id];
+            RACTupleUnpack(NSString *bookId) = input;
+            NSString *url = [NSString stringWithFormat:@"%@/%@/%@",HostString,Interface_Catalogue,bookId];
             [[WTNetworkManager shareNetworkManager] getWithURLString:url
                                                            postValue:nil
                                                     withRequestBlock:^(id resultDictionary, NSError *error) {
@@ -80,7 +82,6 @@
         // 在返回数据信号时，把数据中的字典映射成模型信号，传递出去
         return [requestSignal map:^id(id value) {
             WTBookCatalogueModel *model = [WTBookCatalogueModel objectWithKeyValues:value[@"mixToc"]];
-            self.catalogueModel = model;
             return model;
         }];
     }];
@@ -90,7 +91,7 @@
         @strongify(self);
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             RACTupleUnpack(WTChapterModel *chapter) = input;
-            if (!chapter) chapter = self.catalogueModel.chapters.firstObject;
+            if (!chapter) return nil;
             NSString *timestamp = [NSString stringWithFormat:@"%ld",(NSUInteger)[[NSDate new] timeIntervalSince1970]];
             NSString *kStr = [self getMd5StringWith:chapter];
             NSString *urlStr = [chapter.link URLEncodedString];

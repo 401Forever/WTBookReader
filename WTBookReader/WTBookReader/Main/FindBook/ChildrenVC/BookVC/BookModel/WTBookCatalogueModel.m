@@ -11,13 +11,11 @@
 @implementation WTBookCatalogueModel
 + (NSDictionary *)objectClassInArray{
     return @{
-             @"chapters" : @"WTBookChapterModel"
+             @"chapters" : @"WTChapterModel"
              };
 }
 @end
 
-@implementation WTBookChapterModel
-@end
 
 @implementation WTBookChapterContentModel
 @end

@@ -23,17 +23,17 @@
     _titleArray = @[@"目录",@"笔记",@"书签"];
     _VCArray = @[({
         WTChapterVC *chapterVC = [[WTChapterVC alloc]init];
-//        chapterVC.readModel = _readModel;
+        chapterVC.readModel = _readModel;
         chapterVC.delegate = self;
         chapterVC;
     }),({
         WTNoteVC *noteVC = [[WTNoteVC alloc] init];
-//        noteVC.readModel = _readModel;
+        noteVC.readModel = _readModel;
         noteVC.delegate = self;
         noteVC;
     }),({
         WTMarkVC *markVC =[[WTMarkVC alloc] init];
-//        markVC.readModel = _readModel;
+        markVC.readModel = _readModel;
         markVC.delegate = self;
         markVC;
     })];
@@ -62,6 +62,13 @@
 {
     if ([self.catalogDelegate respondsToSelector:@selector(catalog:didSelectChapter:page:)]) {
         [self.catalogDelegate catalog:self didSelectChapter:chapter page:page];
+    }
+}
+
+- (void)setReadModel:(WTReadModel *)readModel{
+    _readModel = readModel;
+    for (WTMarkVC *tempVC in _VCArray) {
+        tempVC.readModel = _readModel;
     }
 }
 @end

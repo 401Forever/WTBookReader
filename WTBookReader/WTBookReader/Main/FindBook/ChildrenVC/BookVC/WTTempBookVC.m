@@ -27,14 +27,17 @@
     @weakify(self);
     [[self.bookViewModel.requestBookSourceCommand execute:nil] subscribeNext:^(id x) {
         @strongify(self)
-        [[self.bookViewModel.fetchBookCatalogue execute:nil] subscribeNext:^(id x) {
+        [[self.bookViewModel.fetchBookCatalogue execute:nil] subscribeNext:^(WTBookCatalogueModel *catalogue) {
             [[self.bookViewModel.fetchBookChapterData execute:nil] subscribeNext:^(WTBookChapterContentModel *chapter) {
-                WTReadPageViewModel *viewModel = [[WTReadPageViewModel alloc] init];
-                WTChapterModel *chapterModel = [[WTChapterModel alloc] init];
+                WTReadModel *readModel = [[WTReadModel alloc] initWithContent:nil];
+                readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
+                
+                WTChapterModel *chapterModel = readModel.chapters.firstObject;
+                chapterModel.isDownloadChapter = YES;
                 chapterModel.content = chapter.body;
-                viewModel.tempChapter = chapterModel;
+                
                 WTReadPageViewController *bookVC = [[WTReadPageViewController alloc] init];
-                bookVC.viewModel = viewModel;
+                bookVC.model = readModel;
                 [self presentViewController:bookVC animated:YES completion:nil];
             }];
         }];

@@ -28,6 +28,7 @@
 @property(nonatomic,copy) NSString *shortIntro;
 @property(nonatomic,copy) NSString *site;
 @property(nonatomic,copy) NSString *title;
+/** 字段已被删除 */
 @property(nonatomic,strong) NSArray *tags;
 
 

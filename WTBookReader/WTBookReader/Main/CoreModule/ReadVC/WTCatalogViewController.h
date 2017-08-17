@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "WTReadModel.h"
 #import "WTViewPagerVC.h"
 @class WTCatalogViewController;
 @protocol WTCatalogViewControllerDelegate <NSObject>
@@ -15,6 +15,6 @@
 -(void)catalog:(WTCatalogViewController *)catalog didSelectChapter:(NSUInteger)chapter page:(NSUInteger)page;
 @end
 @interface WTCatalogViewController : WTViewPagerVC
-//@property (nonatomic,strong) WTReadModel *readModel;
+@property (nonatomic,strong) WTReadModel *readModel;
 @property (nonatomic,weak) id<WTCatalogViewControllerDelegate>catalogDelegate;
 @end

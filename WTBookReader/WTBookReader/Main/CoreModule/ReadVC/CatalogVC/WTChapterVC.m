@@ -21,7 +21,7 @@ static  NSString *chapterCell = @"chapterCell";
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
     [self.view addSubview:self.tabView];
-//    [self addObserver:self forKeyPath:@"readModel.record.chapter" options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:@"readModel.record.chapter" options:NSKeyValueObservingOptionNew context:NULL];
 }
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
@@ -41,8 +41,7 @@ static  NSString *chapterCell = @"chapterCell";
 #pragma mark - UITableView Delagete DataSource
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
-//    return _readModel.chapters.count;
+    return _readModel.chapters.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -50,10 +49,10 @@ static  NSString *chapterCell = @"chapterCell";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chapterCell];
     }
-//    cell.textLabel.text = _readModel.chapters[indexPath.row].title;
-//    if (indexPath.row == _readModel.record.chapter) {
-//        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-//    }
+    cell.textLabel.text = _readModel.chapters[indexPath.row].title;
+    if (indexPath.row == _readModel.record.chapter) {
+        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+    }
     return cell;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +67,7 @@ static  NSString *chapterCell = @"chapterCell";
 }
 -(void)dealloc
 {
-//    [self removeObserver:self forKeyPath:@"readModel.record.chapter"];
+    [self removeObserver:self forKeyPath:@"readModel.record.chapter"];
 }
 -(void)viewDidLayoutSubviews
 {
