@@ -60,6 +60,14 @@
         [self.delegate menuViewInvokeCatalog:bottomMenu];
     }
 }
+
+- (void)menuViewClickDownloadBtn:(WTBottomMenuView *)bottomMenu{
+    if ([self.delegate respondsToSelector:@selector(menuViewClickDownloadBtn:)]) {
+        [self.delegate menuViewClickDownloadBtn:bottomMenu];
+    }
+    
+}
+
 -(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page
 {
     if ([self.delegate respondsToSelector:@selector(menuViewJumpChapter:page:)]) {

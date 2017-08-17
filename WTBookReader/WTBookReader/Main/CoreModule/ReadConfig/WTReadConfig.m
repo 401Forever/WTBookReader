@@ -10,9 +10,9 @@
 
 
 @implementation WTReadConfig
+static WTReadConfig *readConfig = nil;
 +(instancetype)shareInstance
 {
-    static WTReadConfig *readConfig = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         readConfig = [[self alloc] init];
@@ -20,6 +20,7 @@
     });
     return readConfig;
 }
+
 - (instancetype)init
 {
     self = [super init];
@@ -52,6 +53,7 @@
 {
     [WTReadConfig updateLocalConfig:self];
 }
+
 +(void)updateLocalConfig:(WTReadConfig *)config
 {
     NSMutableData *data=[[NSMutableData alloc]init];
@@ -60,6 +62,7 @@
     [archiver finishEncoding];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"ReadConfig"];
 }
+
 -(void)encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeDouble:self.fontSize forKey:@"fontSize"];
@@ -67,6 +70,7 @@
     [aCoder encodeObject:self.fontColor forKey:@"fontColor"];
     [aCoder encodeObject:self.theme forKey:@"theme"];
 }
+
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];

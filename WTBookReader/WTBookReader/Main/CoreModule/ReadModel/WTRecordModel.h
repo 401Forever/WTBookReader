@@ -13,4 +13,8 @@
 @property (nonatomic) NSUInteger page;  //阅读的页数
 @property (nonatomic) NSUInteger chapter;    //阅读的章节数
 @property (nonatomic) NSUInteger chapterCount;  //总章节数
+
+
+@property(nonatomic,copy) NSString *downloadProgressText;//下载的进度提示
+@property(nonatomic,assign) BOOL isDownloading; //是否在下载中
 @end

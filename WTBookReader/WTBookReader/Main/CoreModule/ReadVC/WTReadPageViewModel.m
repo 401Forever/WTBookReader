@@ -14,6 +14,7 @@
 - (WTRecordModel *)recordModel{
     if (!_recordModel) {
         _recordModel = [[WTRecordModel alloc] init];
+        _recordModel.downloadProgressText = @"测试下....";
     }
     return _recordModel;
 }

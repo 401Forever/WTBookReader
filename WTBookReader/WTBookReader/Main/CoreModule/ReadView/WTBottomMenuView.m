@@ -29,6 +29,9 @@
 @property (nonatomic,strong) UIButton *increaseFont;
 @property (nonatomic,strong) UIButton *decreaseFont;
 @property (nonatomic,strong) UILabel *fontLabel;
+
+@property(nonatomic,strong)  UIButton *downloadBtn;
+@property(nonatomic,strong)  UILabel *downloadProgressLabel;
 @end
 @implementation WTBottomMenuView
 - (instancetype)initWithFrame:(CGRect)frame
@@ -43,6 +46,8 @@
     [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.8]];
     [self addSubview:self.slider];
     [self addSubview:self.catalog];
+    [self addSubview:self.downloadBtn];
+    [self addSubview:self.downloadProgressLabel];
     [self addSubview:self.progressView];
     [self addSubview:self.lastChapter];
     [self addSubview:self.nextChapter];
@@ -52,6 +57,9 @@
     [self addSubview:self.themeView];
     [self addObserver:self forKeyPath:@"readModel.chapter" options:NSKeyValueObservingOptionNew context:NULL];
     [self addObserver:self forKeyPath:@"readModel.page" options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:@"readModel.downloadProgressText" options:NSKeyValueObservingOptionNew context:NULL];
+    [self addObserver:self forKeyPath:@"readModel.isDownloading" options:NSKeyValueObservingOptionNew context:NULL];
+    
     [[WTReadConfig shareInstance] addObserver:self forKeyPath:@"fontSize" options:NSKeyValueObservingOptionNew context:NULL];
 }
 -(UIButton *)catalog
@@ -62,6 +70,29 @@
     }
     return _catalog;
 }
+
+- (UIButton *)downloadBtn{
+    if (!_downloadBtn) {
+        _downloadBtn = [WTReadUtilites commonButtonSEL:@selector(downloadBtnClick:) target:self];
+        _downloadBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        _downloadBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+        _downloadBtn.layer.borderWidth = 1;
+        [_downloadBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_downloadBtn setTitle:@"下载本书" forState:UIControlStateNormal];
+    }
+    return _downloadBtn;
+}
+
+- (UILabel *)downloadProgressLabel{
+    if (!_downloadProgressLabel) {
+        _downloadProgressLabel = [[UILabel alloc] init];
+        _downloadProgressLabel.text = self.readModel.downloadProgressText;
+        _downloadProgressLabel.textColor = [UIColor whiteColor];
+        _downloadProgressLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return _downloadProgressLabel;
+}
+
 -(WTReadProgressView *)progressView
 {
     if (!_progressView) {
@@ -193,9 +224,15 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     
-    if ([keyPath isEqualToString:@"readModel.chapter"] || [keyPath isEqualToString:@"readModel.page"]) {
+    if ([keyPath isEqualToString:@"readModel.chapter"]
+        || [keyPath isEqualToString:@"readModel.page"]
+        || [keyPath isEqualToString:@"readModel.downloadProgressText"]
+        || [keyPath isEqualToString:@"readModel.isDownloading"]) {
+        
         _slider.value = _readModel.page/((float)(_readModel.chapterModel.pageCount-1))*100;
         [_progressView title:_readModel.chapterModel.title progress:[NSString stringWithFormat:@"%.1f%%",_slider.value]];
+        _downloadProgressLabel.text = _readModel.downloadProgressText;
+        _downloadBtn.enabled = !_readModel.isDownloading;
     }
     else if ([keyPath isEqualToString:@"fontSize"]){
         _fontLabel.text = [NSString stringWithFormat:@"%d",(int)[WTReadConfig shareInstance].fontSize];
@@ -233,6 +270,13 @@
         [self.delegate menuViewInvokeCatalog:self];
     }
 }
+
+- (void)downloadBtnClick:(UIButton *)btn{
+    if ([self.delegate respondsToSelector:@selector(menuViewClickDownloadBtn:)]) {
+        [self.delegate menuViewClickDownloadBtn:self];
+    }
+}
+
 -(void)layoutSubviews
 {
     [super layoutSubviews];
@@ -243,7 +287,9 @@
     _fontLabel.frame = CGRectMake(DistanceFromLeftGuiden(_decreaseFont), DistanceFromTopGuiden(_slider)+10, (ViewSize(self).width-20)/3,  30);
     _increaseFont.frame = CGRectMake(DistanceFromLeftGuiden(_fontLabel), DistanceFromTopGuiden(_slider)+10,  (ViewSize(self).width-20)/3, 30);
     _themeView.frame = CGRectMake(0, DistanceFromTopGuiden(_increaseFont)+10, ViewSize(self).width, 40);
-    _catalog.frame = CGRectMake(10, DistanceFromTopGuiden(_themeView), 30, 30);
+    _catalog.frame = CGRectMake(10, DistanceFromTopGuiden(_themeView) + 15, 30, 30);
+    _downloadBtn.frame = CGRectMake(ViewSize(self).width - 80 - 10, DistanceFromTopGuiden(_themeView) + 15, 80, 30);
+    _downloadProgressLabel.frame = CGRectMake(DistanceFromLeftGuiden(_catalog) + 10, DistanceFromTopGuiden(_themeView) + 15, 80, 30);
     _progressView.frame = CGRectMake(60, -60, ViewSize(self).width-120, 50);
     
 }
@@ -252,6 +298,8 @@
     [_slider removeObserver:self forKeyPath:@"highlighted"];
     [self removeObserver:self forKeyPath:@"readModel.chapter"];
     [self removeObserver:self forKeyPath:@"readModel.page"];
+    [self removeObserver:self forKeyPath:@"readModel.downloadProgressText"];
+    [self removeObserver:self forKeyPath:@"readModel.isDownloading"];
     [[WTReadConfig shareInstance] removeObserver:self forKeyPath:@"fontSize"];
 }
 @end

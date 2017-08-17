@@ -225,6 +225,11 @@
     
 }
 
+- (void)menuViewClickDownloadBtn:(WTBottomMenuView *)bottomMenu{
+    bottomMenu.readModel.isDownloading = YES;
+    NSLog(@"点击下载按钮");
+}
+
 -(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page
 {
     [self.pageViewController setViewControllers:@[[self readViewWithChapter:chapter page:page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];

@@ -9,16 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "WTRecordModel.h"
 #import "WTTopMenuView.h"
+#import "WTBottomMenuView.h"
 @class WTMenuView;
 @class WTBottomMenuView;
 @protocol WTMenuViewDelegate <NSObject>
 @optional
 -(void)menuViewDidHidden:(WTMenuView *)menu;
 -(void)menuViewDidAppear:(WTMenuView *)menu;
--(void)menuViewInvokeCatalog:(WTBottomMenuView *)bottomMenu;
--(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page;
--(void)menuViewFontSize:(WTBottomMenuView *)bottomMenu;
 -(void)menuViewMark:(WTTopMenuView *)topMenu;
+-(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page;
+
+-(void)menuViewFontSize:(WTBottomMenuView *)bottomMenu;
+-(void)menuViewInvokeCatalog:(WTBottomMenuView *)bottomMenu;
+-(void)menuViewClickDownloadBtn:(WTBottomMenuView *)bottomMenu;
+
 @end
 @interface WTMenuView : UIView
 @property (nonatomic,weak) id<WTMenuViewDelegate> delegate;
