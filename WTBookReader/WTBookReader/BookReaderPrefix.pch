@@ -22,6 +22,7 @@
 
     #import "WTNetworkManager.h"
     #import "MBProgressHUD+Ex.h"
+    #import "UIViewController+Hud.h"
 #endif
 
 

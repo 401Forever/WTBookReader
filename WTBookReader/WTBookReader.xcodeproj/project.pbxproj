@@ -66,6 +66,7 @@
 		1FD0FE201EAB30DC007FECA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0FE1E1EAB30DC007FECA6 /* LaunchScreen.storyboard */; };
 		1FD0FE2B1EAB30DD007FECA6 /* WTBookReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE2A1EAB30DD007FECA6 /* WTBookReaderTests.m */; };
 		1FD0FE361EAB30DD007FECA6 /* WTBookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE351EAB30DD007FECA6 /* WTBookReaderUITests.m */; };
+		50E75D021F45CA0D00BD2960 /* UIViewController+Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E75D011F45CA0D00BD2960 /* UIViewController+Hud.m */; };
 		7559C032F3AAC311FF1A8C35 /* libPods-WTBookReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5646084FD5BB1EEAFAA6B22F /* libPods-WTBookReader.a */; };
 /* End PBXBuildFile section */
 
@@ -216,6 +217,8 @@
 		1FD0FE351EAB30DD007FECA6 /* WTBookReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTBookReaderUITests.m; sourceTree = "<group>"; };
 		1FD0FE371EAB30DE007FECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0FE461EAB37A5007FECA6 /* ApiDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiDefine.h; sourceTree = "<group>"; };
+		50E75D001F45CA0D00BD2960 /* UIViewController+Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Hud.h"; sourceTree = "<group>"; };
+		50E75D011F45CA0D00BD2960 /* UIViewController+Hud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Hud.m"; sourceTree = "<group>"; };
 		5646084FD5BB1EEAFAA6B22F /* libPods-WTBookReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTBookReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C840338093F848F6F56D8D /* Pods-WTBookReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTBookReader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTBookReader/Pods-WTBookReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,6 +293,8 @@
 				1F3831041EB828C000784AC8 /* NSDictionary+Log.m */,
 				1F5DF0B61F3C597B00013209 /* NSString+Common.h */,
 				1F5DF0B71F3C597B00013209 /* NSString+Common.m */,
+				50E75D001F45CA0D00BD2960 /* UIViewController+Hud.h */,
+				50E75D011F45CA0D00BD2960 /* UIViewController+Hud.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -519,6 +524,7 @@
 		1FD0FE0F1EAB30DB007FECA6 /* WTBookReader */ = {
 			isa = PBXGroup;
 			children = (
+				50E75CFE1F45C8D300BD2960 /* Common */,
 				1F3831001EB8289800784AC8 /* Category */,
 				1FD0FE451EAB374C007FECA6 /* API */,
 				1FD0FE431EAB3199007FECA6 /* Main */,
@@ -587,6 +593,13 @@
 				1F07696B1EAF37F500AB695E /* WTNetworkManager.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		50E75CFE1F45C8D300BD2960 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		E79933D3952FE07DDF03ECE2 /* Pods */ = {
@@ -816,6 +829,7 @@
 				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
 				1F897D971F459C6F00CD2DAF /* WTReadViewController.m in Sources */,
 				1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */,
+				50E75D021F45CA0D00BD2960 /* UIViewController+Hud.m in Sources */,
 				1F897D951F45936900CD2DAF /* WTNoteModel.m in Sources */,
 				1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */,
 				1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */,

@@ -158,6 +158,8 @@
 
 - (void)setBookModel:(WTSortDetailItemModel *)bookModel{
     _bookModel = bookModel;
+    
+    [self showProgressHUD];
     @weakify(self);
     RACTuple *tuple = RACTuplePack(bookModel._id);
     [[[WTBookDownloader downloader].fetchBookCatalogue execute:tuple]
@@ -166,6 +168,7 @@
             RACTuple *chapter = RACTuplePack(catalogue.chapters.firstObject);
             [[[WTBookDownloader downloader].fetchBookChapterData execute:chapter]
                         subscribeNext:^(WTBookChapterContentModel *chapter) {
+                            [self hideProgressHUD];
                             WTReadModel *readModel = [[WTReadModel alloc] initWithContent:nil];
                             readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
                 
