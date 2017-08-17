@@ -9,7 +9,7 @@
 #import "WTBookViewModel.h"
 #import "NSString+Common.h"
 @interface WTBookViewModel()
-@property(nonatomic,strong) WTBookCatalogueModel *catalogueModel;
+
 @end
 
 @implementation WTBookViewModel
@@ -89,7 +89,7 @@
     _fetchBookChapterData = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *input) {
         @strongify(self);
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-            RACTupleUnpack(WTBookChapterModel *chapter) = input;
+            RACTupleUnpack(WTChapterModel *chapter) = input;
             if (!chapter) chapter = self.catalogueModel.chapters.firstObject;
             NSString *timestamp = [NSString stringWithFormat:@"%ld",(NSUInteger)[[NSDate new] timeIntervalSince1970]];
             NSString *kStr = [self getMd5StringWith:chapter];
@@ -119,7 +119,7 @@
     }];
 }
 
-- (NSString *)getMd5StringWith:(WTBookChapterModel *)model{
+- (NSString *)getMd5StringWith:(WTChapterModel *)model{
     NSString *timestamp = [NSString stringWithFormat:@"%ld",(NSUInteger)[[NSDate new] timeIntervalSince1970] + 2 * 60 * 60];
     NSString *targetStr = [NSString stringWithFormat:@"%@/chapter/%@%@",BookSecretKey,[model.link URLEncodedString],timestamp];
     targetStr = [NSString MD5ForLower16Bate:targetStr];

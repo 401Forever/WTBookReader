@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-//#import "WTReadModel.h"
+#import "WTReadModel.h"
+#import "WTBookCatalogueModel.h"
 @protocol WTCatalogViewControllerDelegate;
 @interface WTChapterVC : UIViewController
-//@property (nonatomic,strong) WTReadModel *readModel;
+@property (nonatomic,strong) WTReadModel *readModel;
 @property (nonatomic,weak) id<WTCatalogViewControllerDelegate>delegate;
 
 @end

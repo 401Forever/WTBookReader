@@ -22,5 +22,7 @@
 
 
 
+@property(nonatomic,strong) WTBookCatalogueModel *catalogueModel;
+
 - (instancetype)initWithModel:(WTSortDetailItemModel *)model;
 @end

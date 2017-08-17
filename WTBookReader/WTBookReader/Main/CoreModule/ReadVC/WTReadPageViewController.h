@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WTReadViewController.h"
-#import "WTReadPageViewModel.h"
-
+#import "WTReadModel.h"
 @interface WTReadPageViewController : UIViewController
-@property(nonatomic,strong) WTReadPageViewModel *viewModel;
+//@property(nonatomic,strong) WTReadPageViewModel *viewModel;
+@property(nonatomic,strong) WTReadModel *model;
 @end
