@@ -64,4 +64,11 @@
         [self.catalogDelegate catalog:self didSelectChapter:chapter page:page];
     }
 }
+
+- (void)setReadModel:(WTReadModel *)readModel{
+    _readModel = readModel;
+    for (WTMarkVC *tempVC in _VCArray) {
+        tempVC.readModel = _readModel;
+    }
+}
 @end
