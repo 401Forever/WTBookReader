@@ -48,6 +48,7 @@ static  NSString *chapterCell = @"chapterCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:chapterCell];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chapterCell];
+        cell.textLabel.font = [UIFont systemFontOfSize:12];
     }
     cell.textLabel.text = _readModel.chapters[indexPath.row].title;
     if (indexPath.row == _readModel.record.chapter) {

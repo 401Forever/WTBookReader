@@ -17,11 +17,13 @@
 -(void)menuViewDidHidden:(WTMenuView *)menu;
 -(void)menuViewDidAppear:(WTMenuView *)menu;
 -(void)menuViewMark:(WTTopMenuView *)topMenu;
+-(void)menuViewClickReturnBtn:(WTTopMenuView *)topMenu;
 -(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page;
 
 -(void)menuViewFontSize:(WTBottomMenuView *)bottomMenu;
 -(void)menuViewInvokeCatalog:(WTBottomMenuView *)bottomMenu;
 -(void)menuViewClickDownloadBtn:(WTBottomMenuView *)bottomMenu;
+
 
 @end
 @interface WTMenuView : UIView

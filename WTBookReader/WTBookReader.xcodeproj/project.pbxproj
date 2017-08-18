@@ -24,10 +24,6 @@
 		1F4F55AB1EADAC07003A5535 /* WTFindBookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F55AA1EADAC07003A5535 /* WTFindBookViewModel.m */; };
 		1F4F55AE1EADAC7D003A5535 /* WTFindBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F55AD1EADAC7D003A5535 /* WTFindBookModel.m */; };
 		1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0B71F3C597B00013209 /* NSString+Common.m */; };
-		1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0BB1F3C5EA000013209 /* WTTempBookVC.m */; };
-		1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0BE1F3C5ECC00013209 /* WTBookViewModel.m */; };
-		1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */; };
-		1F5DF0C91F3C67B100013209 /* WTBookCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF0C81F3C67B100013209 /* WTBookCatalogueModel.m */; };
 		1F6CB1FC1F43E3520052CD59 /* WTMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB1FB1F43E3520052CD59 /* WTMenuView.m */; };
 		1F6CB1FF1F43E3A10052CD59 /* WTTopMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB1FE1F43E3A10052CD59 /* WTTopMenuView.m */; };
 		1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6CB2011F43E4480052CD59 /* WTBottomMenuView.m */; };
@@ -66,6 +62,10 @@
 		1FD0FE201EAB30DC007FECA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD0FE1E1EAB30DC007FECA6 /* LaunchScreen.storyboard */; };
 		1FD0FE2B1EAB30DD007FECA6 /* WTBookReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE2A1EAB30DD007FECA6 /* WTBookReaderTests.m */; };
 		1FD0FE361EAB30DD007FECA6 /* WTBookReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD0FE351EAB30DD007FECA6 /* WTBookReaderUITests.m */; };
+		1FF9C52A1F46C6A8003A2969 /* WTBookCatalogueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9C5271F46C6A8003A2969 /* WTBookCatalogueModel.m */; };
+		1FF9C52B1F46C6A8003A2969 /* WTBookSourceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9C5291F46C6A8003A2969 /* WTBookSourceModel.m */; };
+		1FF9C5321F46D8FE003A2969 /* WTBookStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9C5311F46D8FE003A2969 /* WTBookStoreManager.m */; };
+		1FF9C5351F46D92F003A2969 /* WTStoredBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF9C5341F46D92F003A2969 /* WTStoredBookModel.m */; };
 		50E75D021F45CA0D00BD2960 /* UIViewController+Hud.m in Sources */ = {isa = PBXBuildFile; fileRef = 50E75D011F45CA0D00BD2960 /* UIViewController+Hud.m */; };
 		7559C032F3AAC311FF1A8C35 /* libPods-WTBookReader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5646084FD5BB1EEAFAA6B22F /* libPods-WTBookReader.a */; };
 /* End PBXBuildFile section */
@@ -132,14 +132,6 @@
 		1F4F55B61EAE02C8003A5535 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "../../../Library/Developer/Xcode/DerivedData/WTBookReader-bocvaoyrvvcnpgezxtqtqsozxdgf/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework"; sourceTree = "<group>"; };
 		1F5DF0B61F3C597B00013209 /* NSString+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		1F5DF0B71F3C597B00013209 /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
-		1F5DF0BA1F3C5EA000013209 /* WTTempBookVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTempBookVC.h; sourceTree = "<group>"; };
-		1F5DF0BB1F3C5EA000013209 /* WTTempBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTTempBookVC.m; sourceTree = "<group>"; };
-		1F5DF0BD1F3C5ECC00013209 /* WTBookViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookViewModel.h; sourceTree = "<group>"; };
-		1F5DF0BE1F3C5ECC00013209 /* WTBookViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookViewModel.m; sourceTree = "<group>"; };
-		1F5DF0C41F3C679900013209 /* WTBookSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookSourceModel.h; sourceTree = "<group>"; };
-		1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookSourceModel.m; sourceTree = "<group>"; };
-		1F5DF0C71F3C67B100013209 /* WTBookCatalogueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookCatalogueModel.h; sourceTree = "<group>"; };
-		1F5DF0C81F3C67B100013209 /* WTBookCatalogueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookCatalogueModel.m; sourceTree = "<group>"; };
 		1F6CB1FA1F43E3520052CD59 /* WTMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTMenuView.h; sourceTree = "<group>"; };
 		1F6CB1FB1F43E3520052CD59 /* WTMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTMenuView.m; sourceTree = "<group>"; };
 		1F6CB1FD1F43E3A10052CD59 /* WTTopMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTTopMenuView.h; sourceTree = "<group>"; };
@@ -217,6 +209,14 @@
 		1FD0FE351EAB30DD007FECA6 /* WTBookReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTBookReaderUITests.m; sourceTree = "<group>"; };
 		1FD0FE371EAB30DE007FECA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FD0FE461EAB37A5007FECA6 /* ApiDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiDefine.h; sourceTree = "<group>"; };
+		1FF9C5261F46C6A8003A2969 /* WTBookCatalogueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookCatalogueModel.h; sourceTree = "<group>"; };
+		1FF9C5271F46C6A8003A2969 /* WTBookCatalogueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookCatalogueModel.m; sourceTree = "<group>"; };
+		1FF9C5281F46C6A8003A2969 /* WTBookSourceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookSourceModel.h; sourceTree = "<group>"; };
+		1FF9C5291F46C6A8003A2969 /* WTBookSourceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookSourceModel.m; sourceTree = "<group>"; };
+		1FF9C5301F46D8FE003A2969 /* WTBookStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBookStoreManager.h; sourceTree = "<group>"; };
+		1FF9C5311F46D8FE003A2969 /* WTBookStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBookStoreManager.m; sourceTree = "<group>"; };
+		1FF9C5331F46D92F003A2969 /* WTStoredBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTStoredBookModel.h; sourceTree = "<group>"; };
+		1FF9C5341F46D92F003A2969 /* WTStoredBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStoredBookModel.m; sourceTree = "<group>"; };
 		50E75D001F45CA0D00BD2960 /* UIViewController+Hud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Hud.h"; sourceTree = "<group>"; };
 		50E75D011F45CA0D00BD2960 /* UIViewController+Hud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Hud.m"; sourceTree = "<group>"; };
 		5646084FD5BB1EEAFAA6B22F /* libPods-WTBookReader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WTBookReader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -333,7 +333,6 @@
 		1F4F55A11EADABE6003A5535 /* ChildrenVC */ = {
 			isa = PBXGroup;
 			children = (
-				1F5DF0B91F3C5E6A00013209 /* BookVC */,
 				1F6E3A6B1EC05C3600CFD75A /* RankDetailVC */,
 				1F6E3A5D1EBDA94800CFD75A /* RankVC */,
 				1F3DBE921EB086B80036E483 /* SortDetailVC */,
@@ -355,29 +354,6 @@
 				1F4F55AD1EADAC7D003A5535 /* WTFindBookModel.m */,
 			);
 			path = ParentVC;
-			sourceTree = "<group>";
-		};
-		1F5DF0B91F3C5E6A00013209 /* BookVC */ = {
-			isa = PBXGroup;
-			children = (
-				1F5DF0C31F3C676700013209 /* BookModel */,
-				1F5DF0BA1F3C5EA000013209 /* WTTempBookVC.h */,
-				1F5DF0BB1F3C5EA000013209 /* WTTempBookVC.m */,
-				1F5DF0BD1F3C5ECC00013209 /* WTBookViewModel.h */,
-				1F5DF0BE1F3C5ECC00013209 /* WTBookViewModel.m */,
-			);
-			path = BookVC;
-			sourceTree = "<group>";
-		};
-		1F5DF0C31F3C676700013209 /* BookModel */ = {
-			isa = PBXGroup;
-			children = (
-				1F5DF0C41F3C679900013209 /* WTBookSourceModel.h */,
-				1F5DF0C51F3C679900013209 /* WTBookSourceModel.m */,
-				1F5DF0C71F3C67B100013209 /* WTBookCatalogueModel.h */,
-				1F5DF0C81F3C67B100013209 /* WTBookCatalogueModel.m */,
-			);
-			path = BookModel;
 			sourceTree = "<group>";
 		};
 		1F6CB20A1F43EF9C0052CD59 /* CatalogVC */ = {
@@ -426,6 +402,10 @@
 		1F78FE651F4196EA0007FF27 /* ReadModel */ = {
 			isa = PBXGroup;
 			children = (
+				1FF9C5261F46C6A8003A2969 /* WTBookCatalogueModel.h */,
+				1FF9C5271F46C6A8003A2969 /* WTBookCatalogueModel.m */,
+				1FF9C5281F46C6A8003A2969 /* WTBookSourceModel.h */,
+				1FF9C5291F46C6A8003A2969 /* WTBookSourceModel.m */,
 				1F78FE7A1F41AACC0007FF27 /* WTRecordModel.h */,
 				1F78FE7B1F41AACC0007FF27 /* WTRecordModel.m */,
 				1F78FE7D1F41AB120007FF27 /* WTChapterModel.h */,
@@ -487,6 +467,7 @@
 		1F824F691F418ACF00821ED6 /* ReadConfig */ = {
 			isa = PBXGroup;
 			children = (
+				1FF9C52F1F46D8CD003A2969 /* BookStore */,
 				1F824F6A1F418BEC00821ED6 /* WTReadConfig.h */,
 				1F824F6B1F418BEC00821ED6 /* WTReadConfig.m */,
 				1F78FE621F4193F20007FF27 /* WTReadParser.h */,
@@ -593,6 +574,17 @@
 				1F07696B1EAF37F500AB695E /* WTNetworkManager.m */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		1FF9C52F1F46D8CD003A2969 /* BookStore */ = {
+			isa = PBXGroup;
+			children = (
+				1FF9C5301F46D8FE003A2969 /* WTBookStoreManager.h */,
+				1FF9C5311F46D8FE003A2969 /* WTBookStoreManager.m */,
+				1FF9C5331F46D92F003A2969 /* WTStoredBookModel.h */,
+				1FF9C5341F46D92F003A2969 /* WTStoredBookModel.m */,
+			);
+			path = BookStore;
 			sourceTree = "<group>";
 		};
 		50E75CFE1F45C8D300BD2960 /* Common */ = {
@@ -809,11 +801,11 @@
 				1FA5B5DA1F4530B000B49D5D /* WTBookDownloader.m in Sources */,
 				1F07696C1EAF37F500AB695E /* WTNetworkManager.m in Sources */,
 				1F6CB2161F43F6780052CD59 /* UIImage+ImageEffects.m in Sources */,
-				1F5DF0BF1F3C5ECC00013209 /* WTBookViewModel.m in Sources */,
 				1F78FE761F41A3B90007FF27 /* WTReadUtilites.m in Sources */,
 				1F6CB20D1F43EFC00052CD59 /* WTChapterVC.m in Sources */,
 				1F0769621EAF225100AB695E /* WTSortCell.m in Sources */,
 				1F07695F1EAEFC2B00AB695E /* WTSortVC.m in Sources */,
+				1FF9C52B1F46C6A8003A2969 /* WTBookSourceModel.m in Sources */,
 				1F6E3A631EBDA9A500CFD75A /* WTRankCell.m in Sources */,
 				1F3831051EB828C000784AC8 /* NSArray+Log.m in Sources */,
 				1F4F55A81EADABE6003A5535 /* WTFindBookVC.m in Sources */,
@@ -826,17 +818,17 @@
 				1F6CB1FF1F43E3A10052CD59 /* WTTopMenuView.m in Sources */,
 				1F824F6C1F418BEC00821ED6 /* WTReadConfig.m in Sources */,
 				1F5DF0B81F3C597B00013209 /* NSString+Common.m in Sources */,
-				1F5DF0C61F3C679900013209 /* WTBookSourceModel.m in Sources */,
 				1F897D971F459C6F00CD2DAF /* WTReadViewController.m in Sources */,
 				1F6CB2021F43E4480052CD59 /* WTBottomMenuView.m in Sources */,
 				50E75D021F45CA0D00BD2960 /* UIViewController+Hud.m in Sources */,
 				1F897D951F45936900CD2DAF /* WTNoteModel.m in Sources */,
 				1F78FE691F41989E0007FF27 /* WTReadPageViewController.m in Sources */,
-				1F5DF0BC1F3C5EA000013209 /* WTTempBookVC.m in Sources */,
 				1F78FE7F1F41AB120007FF27 /* WTChapterModel.m in Sources */,
 				1F0769661EAF32E800AB695E /* WTSortModel.m in Sources */,
+				1FF9C52A1F46C6A8003A2969 /* WTBookCatalogueModel.m in Sources */,
 				1F6CB1FC1F43E3520052CD59 /* WTMenuView.m in Sources */,
 				1FD0FE151EAB30DC007FECA6 /* AppDelegate.m in Sources */,
+				1FF9C5321F46D8FE003A2969 /* WTBookStoreManager.m in Sources */,
 				1F6E3A691EBDA9C200CFD75A /* WTRankViewModel.m in Sources */,
 				1F6E3A741EC060EE00CFD75A /* WTRankDetailViewModel.m in Sources */,
 				1F3DBE9C1EB1C44B0036E483 /* WTSortDetailViewModel.m in Sources */,
@@ -846,12 +838,12 @@
 				1F6CB2051F43E6A50052CD59 /* WTCatalogViewController.m in Sources */,
 				1F6E3A601EBDA98200CFD75A /* WTRankVC.m in Sources */,
 				1F6E3A771EC06D9900CFD75A /* WTRankDetailModel.m in Sources */,
-				1F5DF0C91F3C67B100013209 /* WTBookCatalogueModel.m in Sources */,
 				1F78FE641F4193F20007FF27 /* WTReadParser.m in Sources */,
 				1F78FE731F419F030007FF27 /* WTMagnifierView.m in Sources */,
 				1F3DBE951EB087050036E483 /* WTSortDetailVC.m in Sources */,
 				1F0769691EAF32F700AB695E /* WTSortViewModel.m in Sources */,
 				1F6CB2091F43EC350052CD59 /* WTViewPagerVC.m in Sources */,
+				1FF9C5351F46D92F003A2969 /* WTStoredBookModel.m in Sources */,
 				1F78FE701F419E150007FF27 /* WTReadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

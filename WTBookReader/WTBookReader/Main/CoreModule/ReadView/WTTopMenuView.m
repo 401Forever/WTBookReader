@@ -62,7 +62,10 @@
 }
 -(void)backView
 {
-    [[WTReadUtilites getCurrentVC] dismissViewControllerAnimated:YES completion:nil];
+    if ([self.delegate respondsToSelector:@selector(menuViewClickReturnBtn:)]) {
+        [self.delegate menuViewClickReturnBtn:self];
+    }
+//    [[WTReadUtilites getCurrentVC] dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)layoutSubviews
 {

@@ -19,6 +19,18 @@
 #define LeftSpacing 20.0f
 #define RightSpacing  20.0f
 
+/** 主题颜色 */
+#define ReadConfig_ThemeColor_1 [UIColor whiteColor]
+#define ReadConfig_ThemeColor_2 RGBA(188, 178, 190, 1)
+#define ReadConfig_ThemeColor_3 RGBA(190, 182, 162, 1)
+#define ReadConfig_ThemeColor_4 RGBA(30, 30, 40, 1)
+
+/** 字体颜色 */
+#define ReadConfig_FontColor_1 [UIColor blackColor]
+#define ReadConfig_FontColor_2 ReadConfig_FontColor_1
+#define ReadConfig_FontColor_3 ReadConfig_FontColor_1
+#define ReadConfig_FontColor_4 RGBA(88, 111, 143, 1)
+
 @interface WTReadConfig : NSObject<NSCoding>
 +(instancetype)shareInstance;
 /** 书籍字体 */

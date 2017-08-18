@@ -86,6 +86,12 @@
         [self.delegate menuViewMark:topMenu];
     }
 }
+
+- (void)menuViewClickReturnBtn:(WTTopMenuView *)topMenu{
+    if ([self.delegate respondsToSelector:@selector(menuViewClickReturnBtn:)]) {
+        [self.delegate menuViewClickReturnBtn:topMenu];
+    }
+}
 #pragma mark -
 -(void)hiddenSelf
 {

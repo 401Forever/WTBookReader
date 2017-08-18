@@ -15,8 +15,10 @@
 #import "UIImage+ImageEffects.h"
 #import "WTBookDownloader.h"
 
+#import "WTStoredBookModel.h"
+
 @interface WTReadPageViewController : UIViewController
+/** 列表传入的书籍信息 */
 @property(nonatomic,strong) WTSortDetailItemModel *bookModel;
 
-@property(nonatomic,strong) WTReadModel *model;
 @end

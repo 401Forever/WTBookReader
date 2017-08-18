@@ -307,6 +307,7 @@
 @property (nonatomic,strong) UIView *theme1;
 @property (nonatomic,strong) UIView *theme2;
 @property (nonatomic,strong) UIView *theme3;
+@property (nonatomic,strong) UIView *theme4;
 @end
 @implementation WTThemeView
 - (instancetype)init
@@ -319,47 +320,34 @@
 }
 -(void)setup{
     [self setBackgroundColor:[UIColor clearColor]];
-    [self addSubview:self.theme1];
-    [self addSubview:self.theme2];
-    [self addSubview:self.theme3];
-}
--(UIView *)theme1
-{
-    if (!_theme1) {
-        _theme1 = [[UIView alloc] init];
-        _theme1.backgroundColor = [UIColor whiteColor];
-        [_theme1 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeTheme:)]];
+
+    NSArray *colorArray = @[ReadConfig_ThemeColor_1,ReadConfig_ThemeColor_2,ReadConfig_ThemeColor_3,ReadConfig_ThemeColor_4];
+    NSInteger viewCount = 4;
+    CGFloat themeViewW = 40;
+    CGFloat spacing = (MainScreenWidth - themeViewW * viewCount)/(viewCount + 1);
+    CGFloat themeViewH = themeViewW;
+    CGFloat themeViewX = spacing;
+    for (NSInteger index = 0; index < viewCount; index++) {
+        UIView *themeView = [[UIView alloc] init];
+        themeView.backgroundColor = colorArray[index];
+        themeView.frame = CGRectMake(themeViewX, 0, themeViewW, themeViewH);
+        themeView.backgroundColor = colorArray[index];
+        [themeView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeTheme:)]];
+        themeView.layer.borderColor = [UIColor whiteColor].CGColor;
+        themeView.layer.borderWidth = 1;
+        [self addSubview:themeView];
+        themeView.tag = index;
+        themeViewX = themeViewX + themeViewW + spacing;
     }
-    return _theme1;
 }
--(UIView *)theme2
-{
-    if (!_theme2) {
-        _theme2 = [[UIView alloc] init];
-        _theme2.backgroundColor = RGBA(188, 178, 190, 1);
-        [_theme2 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeTheme:)]];
-    }
-    return _theme2;
-}
--(UIView *)theme3
-{
-    if (!_theme3) {
-        _theme3 = [[UIView alloc] init];
-        _theme3.backgroundColor = RGBA(190, 182, 162, 1);
-        [_theme3 addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeTheme:)]];
-    }
-    return _theme3;
-}
+
 -(void)changeTheme:(UITapGestureRecognizer *)tap
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:WTThemeNotification object:tap.view.backgroundColor];
-}
--(void)layoutSubviews
-{
-    CGFloat spacing = (ViewSize(self).width-40*3)/4;
-    _theme1.frame = CGRectMake(spacing, 0, 40, 40);
-    _theme2.frame = CGRectMake(DistanceFromLeftGuiden(_theme1)+spacing, 0, 40, 40);
-    _theme3.frame = CGRectMake(DistanceFromLeftGuiden(_theme2)+spacing, 0, 40, 40);
+    [[NSNotificationCenter defaultCenter] postNotificationName:WTThemeNotification
+                                                        object:@{
+                                                                 @"BackgroupColor":tap.view.backgroundColor,
+                                                                 @"FontColorIndex":@(tap.view.tag)
+                                                                 }];
 }
 @end
 @interface WTReadProgressView ()

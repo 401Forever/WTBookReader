@@ -24,9 +24,19 @@
 }
 -(void)changeTheme:(NSNotification *)no
 {
-    [WTReadConfig shareInstance].theme = no.object;
+    NSArray *fontColors = @[ReadConfig_FontColor_1,ReadConfig_FontColor_2,ReadConfig_FontColor_3,ReadConfig_FontColor_4];
+    [WTReadConfig shareInstance].theme = no.object[@"BackgroupColor"];
+    [WTReadConfig shareInstance].fontColor = fontColors[[no.object[@"FontColorIndex"] integerValue]];
     [self.view setBackgroundColor:[WTReadConfig shareInstance].theme];
+    [self reloadReadView];
 }
+
+- (void)reloadReadView{
+    WTReadConfig *config = [WTReadConfig shareInstance];
+    _readView.frameRef = [WTReadParser parserContent:_content config:config bouds:CGRectMake(0,0, _readView.frame.size.width, _readView.frame.size.height)];
+    [_readView setNeedsDisplay];
+}
+
 -(WTReadView *)readView
 {
     if (!_readView) {
