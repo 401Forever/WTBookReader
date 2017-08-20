@@ -9,7 +9,7 @@
 #import "WTReadPageViewController.h"
 #define AnimationDelay 0.3
 
-@interface WTReadPageViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,WTMenuViewDelegate,UIGestureRecognizerDelegate,WTCatalogViewControllerDelegate,WTReadViewControllerDelegate>
+@interface WTReadPageViewController ()<UIPageViewControllerDelegate,UIPageViewControllerDataSource,WTMenuViewDelegate,UIGestureRecognizerDelegate,WTCatalogViewControllerDelegate,WTReadViewControllerDelegate,UIAlertViewDelegate>
 {
     NSUInteger _chapter;    //当前显示的章节
     NSUInteger _page;       //当前显示的页数
@@ -123,7 +123,6 @@
     _model.record.chapter = chapter;
     _model.record.page = page;
     _model.font = [NSNumber numberWithFloat:[WTReadConfig shareInstance].fontSize];
-    //    [WTReadModel updateLocalModel:_model url:_resourceURL];
 }
 
 - (void)fetchChapterWithModel:(WTChapterModel *)chapterModel //需要获取的章节信息
@@ -139,11 +138,11 @@
          chapterModel.isDownloadChapter = YES;
          chapterModel.content = chapter.body;
          isNext ? (_model.record.page = 0 ) : (_model.record.page = chapterModel.pageArray.count - 1);
-//         isNext ? (_model.record.chapter = targetChapter + 1 ) : (_model.record.chapter = targetChapter - 1);
          _model.record.chapter = targetChapter;
          _page = _model.record.page;
          _chapter = _model.record.chapter;
-         [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+         UIPageViewControllerNavigationDirection direction = isNext ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
+         [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:direction animated:YES completion:nil];
          self.tapGesture.enabled = YES;
          [self hideProgressHUD];
      }];
@@ -254,9 +253,9 @@
     
     [_model.record.chapterModel updateFont];
     
-//    for (int i = 0; i < _model.chapters.count; i++) {
-//        [_model.chapters[i] updateFont];
-//    }
+    for (int i = 0; i < _model.chapters.count; i++) {
+        [_model.chapters[i] updateFont];
+    }
     
     [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self updateReadModelWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page];
@@ -304,7 +303,39 @@
 }
 
 - (void)menuViewClickReturnBtn:(WTTopMenuView *)topMenu{
-    WTStoredBookModel *model = [WTStoredBookModel objectsWhere:@"ID = '%@'" args:(__bridge struct __va_list_tag *)(self.bookModel._id)];
+    
+    NSString *condition = [NSString stringWithFormat:@"bookId = '%@'",self.bookModel._id];
+    RLMResults *models = [WTStoredBookModel objectsWhere:condition];
+    if (!models.count) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"是否将本书保存在本地" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+        return;
+    }else{
+#warning 可能存在字体更改之后 页面数不对的问题
+        RLMRealm *realm = [RLMRealm defaultRealm];
+        [realm beginWriteTransaction];
+        WTStoredBookModel *storeModel = models.firstObject;
+        storeModel.chapterCount = self.model.chapters.count;
+        storeModel.currentPageCount = _page;
+        storeModel.currentChapterCount = _chapter;
+        [WTStoredBookModel createOrUpdateInRealm:realm withValue:storeModel];
+        [realm commitWriteTransaction];
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
+    WTStoredBookModel *storeModel = [[WTStoredBookModel alloc] initWithModel:self.bookModel];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [WTStoredBookModel createOrUpdateInRealm:realm withValue:storeModel];
+    [realm commitWriteTransaction];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -424,7 +455,7 @@
 -(UIPageViewController *)pageViewController
 {
     if (!_pageViewController) {
-        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
         _pageViewController.delegate = self;
         _pageViewController.dataSource = self;
         [self.view addSubview:_pageViewController.view];
@@ -476,12 +507,22 @@
          WTReadModel *readModel = [[WTReadModel alloc] initWithContent:nil];
          readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
          self.model = readModel;
-         RACTuple *chapter = RACTuplePack(catalogue.chapters.firstObject);
+         
+         WTStoredBookModel *storedBook = [WTStoredBookModel objectForPrimaryKey:self.bookModel._id];
+         WTChapterModel *currentChapter = catalogue.chapters.firstObject;
+         if (storedBook  && storedBook.currentChapterCount < catalogue.chapters.count) {
+             currentChapter = catalogue.chapters[storedBook.currentChapterCount];
+             self.model.record.page = storedBook.currentPageCount;
+             self.model.record.chapter = storedBook.currentChapterCount;
+             _chapter = self.model.record.chapter;
+             _page = self.model.record.page;
+         }
+         
+         RACTuple *chapter = RACTuplePack(currentChapter);
          [[[WTBookDownloader downloader].fetchBookChapterData execute:chapter]
           subscribeNext:^(WTBookChapterContentModel *chapter) {
-              WTChapterModel *chapterModel = readModel.chapters.firstObject;
-              chapterModel.isDownloadChapter = YES;
-              chapterModel.content = chapter.body;
+              currentChapter.isDownloadChapter = YES;
+              currentChapter.content = chapter.body;
               [self setupUI];
               [self hideProgressHUD];
           }];

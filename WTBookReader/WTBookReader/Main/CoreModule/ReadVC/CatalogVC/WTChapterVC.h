@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "WTReadModel.h"
+#import "WTChapterCell.h"
 #import "WTBookCatalogueModel.h"
 @protocol WTCatalogViewControllerDelegate;
 @interface WTChapterVC : UIViewController

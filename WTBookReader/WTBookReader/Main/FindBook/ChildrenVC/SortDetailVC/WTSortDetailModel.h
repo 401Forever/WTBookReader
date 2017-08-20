@@ -5,7 +5,7 @@
 //  Created by xueban on 2017/4/27.
 //  Copyright © 2017年 lyw. All rights reserved.
 //
-
+@class WTStoredBookModel;
 #import <Foundation/Foundation.h>
 @class WTSortDetailItemModel;
 
@@ -36,4 +36,6 @@
 @property(nonatomic,copy) NSString *latelyFollowerAndretentionRatio;
 
 - (RACSignal *)fetchImageSignal;
+
++ (instancetype)itemWithModel:(WTStoredBookModel *)model;
 @end

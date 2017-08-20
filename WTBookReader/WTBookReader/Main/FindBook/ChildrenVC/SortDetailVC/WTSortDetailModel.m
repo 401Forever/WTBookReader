@@ -8,6 +8,7 @@
 
 #import "WTSortDetailModel.h"
 #import "NSString+Common.h"
+#import "WTStoredBookModel.h"
 #define NotNull(str) (str.length ? str : @"无")
 
 @implementation WTSortDetailModel
@@ -51,4 +52,17 @@
         return nil;
     }];
 }
+
++ (instancetype)itemWithModel:(WTStoredBookModel *)model{
+    WTSortDetailItemModel *temp = [[WTSortDetailItemModel alloc] init];
+    temp._id = model.bookId;
+    temp.author = model.author;
+    temp.banned = model.banned;
+    temp.cover = model.cover;
+    temp.shortIntro = model.shortIntro;
+    temp.site = model.site;
+    temp.title = model.title;
+    return temp;
+}
+
 @end

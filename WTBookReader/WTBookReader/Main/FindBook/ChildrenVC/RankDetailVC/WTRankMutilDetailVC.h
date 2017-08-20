@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "WTRankDetailViewModel.h"
 #import "WTSortDetailCell.h"
+#import "WTReadPageViewController.h"
 @interface WTRankMutilDetailVC : UIViewController
 + (instancetype)rankDetailVC;
 + (instancetype)rankDetailVCWithViewModel:(WTRankDetailViewModel *)viewModel;

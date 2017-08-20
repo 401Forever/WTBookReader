@@ -11,6 +11,7 @@
 #import "WTReadParser.h"
 
 @implementation WTChapterModel
+MJCodingImplementation
 - (instancetype)init
 {
     self = [super init];
@@ -117,21 +118,11 @@
     return [_content substringWithRange:NSMakeRange(local, length)];
 }
 
--(void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeObject:self.content forKey:@"content"];
-    [aCoder encodeObject:self.title forKey:@"title"];
-    [aCoder encodeInteger:self.pageCount forKey:@"pageCount"];
-    [aCoder encodeObject:self.pageArray forKey:@"pageArray"];
-}
--(id)initWithCoder:(NSCoder *)aDecoder{
-    self = [super init];
-    if (self) {
-        _content = [aDecoder decodeObjectForKey:@"content"];
-        self.title = [aDecoder decodeObjectForKey:@"title"];
-        self.pageCount = [aDecoder decodeIntegerForKey:@"pageCount"];
-        self.pageArray = [aDecoder decodeObjectForKey:@"pageArray"];
+- (BOOL)isDownloadChapter{
+    if (!_isDownloadChapter) {
+        
     }
-    return self;
+    return _isDownloadChapter;
 }
 
 @end

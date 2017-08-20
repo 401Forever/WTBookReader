@@ -9,77 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WTBookReader/Main/FindBook/ChildrenVC/SortDetailVC/WTSortDetailVC.m"
-            timestampString = "515218119.873907"
+            filePath = "Pods/Realm/Realm/RLMProperty.mm"
+            timestampString = "524769148.177605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-fetchDataFromHeader"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "-initWithName:indexed:linkPropertyDescriptor:property:"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WTBookReader/Main/FindBook/ChildrenVC/SortDetailVC/WTSortDetailVC.m"
-            timestampString = "515218550.39744"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-fetchDataFromHeader"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__37-[WTSortDetailVC fetchDataFromHeader]_block_invoke"
-                  moduleName = "WTBookReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lyw/Desktop/Project/App/BookReader/WTBookReader/WTBookReader/Main/FindBook/ChildrenVC/SortDetailVC/WTSortDetailVC.m"
-                  timestampString = "524669215.681216"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "747">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_.135"
-                  moduleName = "WTBookReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lyw/Desktop/Project/App/BookReader/WTBookReader/WTBookReader/Main/FindBook/ChildrenVC/SortDetailVC/WTSortDetailVC.m"
-                  timestampString = "524669215.683997"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "37">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__destroy_helper_block_.136"
-                  moduleName = "WTBookReader"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lyw/Desktop/Project/App/BookReader/WTBookReader/WTBookReader/Main/FindBook/ChildrenVC/SortDetailVC/WTSortDetailVC.m"
-                  timestampString = "524669215.687139"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "25">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

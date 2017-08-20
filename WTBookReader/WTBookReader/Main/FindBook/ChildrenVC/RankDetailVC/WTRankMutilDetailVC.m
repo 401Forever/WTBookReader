@@ -74,6 +74,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    WTReadPageViewController *pageVC = [[WTReadPageViewController alloc] init];
+    pageVC.bookModel = [self.rankDetailViewModel modelAtIndexPath:indexPath];
+    [self presentViewController:pageVC animated:YES completion:nil];
 }
 
 #pragma mark - UIScrollViewDelegate

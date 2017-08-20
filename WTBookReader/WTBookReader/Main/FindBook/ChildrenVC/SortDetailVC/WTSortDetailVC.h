@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "WTSortDetailViewModel.h"
-
+#import "WTReadPageViewController.h"
 @interface WTSortDetailVC : UIViewController
 + (instancetype)sortDetailVC;
 + (instancetype)sortDetailVCWithViewModel:(WTSortDetailViewModel *)viewModel;

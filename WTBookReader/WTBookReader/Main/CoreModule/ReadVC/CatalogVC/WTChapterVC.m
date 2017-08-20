@@ -23,9 +23,11 @@ static  NSString *chapterCell = @"chapterCell";
     [self.view addSubview:self.tabView];
     [self addObserver:self forKeyPath:@"readModel.record.chapter" options:NSKeyValueObservingOptionNew context:NULL];
 }
+
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
     [_tabView reloadData];
+    [self.tabView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_readModel.record.chapter inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     
 }
 -(UITableView *)tabView
@@ -45,14 +47,15 @@ static  NSString *chapterCell = @"chapterCell";
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:chapterCell];
+    WTChapterCell *cell = [tableView dequeueReusableCellWithIdentifier:chapterCell];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chapterCell];
+        cell = [[WTChapterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:chapterCell];
         cell.textLabel.font = [UIFont systemFontOfSize:12];
     }
     cell.textLabel.text = _readModel.chapters[indexPath.row].title;
+    cell.selectedView = NO;
     if (indexPath.row == _readModel.record.chapter) {
-        [tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+        cell.selectedView = YES;
     }
     return cell;
 }

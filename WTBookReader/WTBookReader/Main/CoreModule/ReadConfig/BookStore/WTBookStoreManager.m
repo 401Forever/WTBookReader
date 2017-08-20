@@ -9,7 +9,7 @@
 #import "WTBookStoreManager.h"
 #import <Realm.h>
 
-#define BookStoreManagerDataBaseName @"ReadBookDataBase"
+#define BookStoreManagerDataBaseName @"ReadBookDataBase.realm"
 
 @implementation WTBookStoreManager
 static WTBookStoreManager *bookStoreManager = nil;

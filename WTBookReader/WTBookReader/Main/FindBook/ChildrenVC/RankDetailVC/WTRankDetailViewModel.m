@@ -66,7 +66,14 @@
             RACTupleUnpack(NSNumber *pageIndex,id data) = value;
             WTRankDetailModel *model = [WTRankDetailModel objectWithKeyValues:data[@"ranking"]];
             NSMutableArray *currentData = self.dataArray[[pageIndex intValue]];
-            [currentData addObjectsFromArray:model.books];
+            NSMutableArray *sortedArray = [NSMutableArray arrayWithArray:model.books];
+            [sortedArray sortUsingComparator:^NSComparisonResult(WTSortDetailItemModel  *obj1, WTSortDetailItemModel  *obj2) {
+                if ([obj1.latelyFollower integerValue] > [obj2.latelyFollower integerValue]) {
+                    return NSOrderedAscending;
+                }
+                return NSOrderedDescending;
+            }];
+            [currentData addObjectsFromArray:sortedArray];
             return RACTuplePack(pageIndex, model.books);
         }];
     }];
