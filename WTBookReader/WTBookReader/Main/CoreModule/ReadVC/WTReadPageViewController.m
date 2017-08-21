@@ -364,6 +364,7 @@
     [realm beginWriteTransaction];
     [WTStoredBookModel createOrUpdateInRealm:realm withValue:storeModel];
     [realm commitWriteTransaction];
+    [[NSNotificationCenter defaultCenter] postNotificationName:WTAddBookNotification object:nil];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

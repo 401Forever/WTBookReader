@@ -24,6 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addBookNotification)
+                                                 name:WTAddBookNotification object:nil];
     [self prepareUI];
 }
 
@@ -37,6 +40,9 @@
                                                            refreshingAction:@selector(fetchDataFromHeader)];
 }
 
+- (void)addBookNotification{
+    [self.tableView.mj_header beginRefreshing];
+}
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.bookshelfViewModel numberOfRowsInSection:0];

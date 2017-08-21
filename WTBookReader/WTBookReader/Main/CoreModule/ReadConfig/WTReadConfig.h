@@ -12,7 +12,7 @@
 #define WTThemeNotification @"WTThemeNotification"
 #define WTEditingNotification @"WTEditingNotification"
 #define WTEndEditNotification @"WTEndEditNotification"
-
+#define WTAddBookNotification @"WTAddBookNotification"
 
 #define TopSpacing 40.0f
 #define BottomSpacing 40.0f
