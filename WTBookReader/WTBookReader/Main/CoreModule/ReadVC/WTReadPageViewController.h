@@ -14,7 +14,7 @@
 #import "WTCatalogViewController.h"
 #import "UIImage+ImageEffects.h"
 #import "WTBookDownloader.h"
-
+#import "WTBookCache.h"
 #import "WTStoredBookModel.h"
 
 @interface WTReadPageViewController : UIViewController

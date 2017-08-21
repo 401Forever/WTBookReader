@@ -11,6 +11,7 @@
 #import "WTBookSourceModel.h"
 #import "WTBookCatalogueModel.h"
 #import "NSString+Common.h"
+#import "WTStoredChapterModel.h"
 
 @interface WTBookDownloader : NSObject
 +(instancetype)downloader;
@@ -21,4 +22,7 @@
 @property(nonatomic,strong) RACCommand *fetchBookCatalogue;
 /** 获取指定章节的数据 */
 @property(nonatomic,strong) RACCommand *fetchBookChapterData;
+
+- (void)downloadAllChapterInBackgrounpWithCatalogue:(NSArray<WTChapterModel *> *)catalogues
+                                             bookId:(NSString *)bookId;
 @end

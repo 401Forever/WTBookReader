@@ -26,6 +26,8 @@
 @property(nonatomic,strong) UITapGestureRecognizer *tapGesture; //展示菜单的手势
 
 @property(nonatomic,strong) WTReadModel *model;
+@property(nonatomic,assign) BOOL canDownload; //是否可以下载章节 当全部缓存到本地的时候 不可以下载
+
 @end
 
 @implementation WTReadPageViewController
@@ -142,10 +144,32 @@
          _page = _model.record.page;
          _chapter = _model.record.chapter;
          UIPageViewControllerNavigationDirection direction = isNext ? UIPageViewControllerNavigationDirectionForward : UIPageViewControllerNavigationDirectionReverse;
-         [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:direction animated:YES completion:nil];
          self.tapGesture.enabled = YES;
-         [self hideProgressHUD];
+         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:direction animated:YES completion:nil];
+             });
+             [self hideProgressHUD];
+         });
      }];
+}
+
+- (BOOL)fetchChapterFromDatabaseWithChapterIndex:(NSInteger)chapterIndex{
+    BOOL isSearchSuccess = NO;
+    if (chapterIndex < 0 || chapterIndex > self.model.chapters.count) {
+        return isSearchSuccess;
+    }
+    //先从数据库查找
+    NSString *condition = [NSString stringWithFormat:@"bookId = '%@' AND chapterIndex = %ld",self.bookModel._id, chapterIndex];
+    RLMResults *results = [WTStoredChapterModel objectsWhere:condition];
+    if (results.count) {
+        WTStoredChapterModel *storedChapter = results.firstObject;
+        WTChapterModel *currentChapter = [self.model.chapters objectAtIndex:chapterIndex];
+        currentChapter.isDownloadChapter = YES;
+        currentChapter.content = storedChapter.body;
+        isSearchSuccess = YES;
+    }
+    return isSearchSuccess;
 }
 
 #pragma mark - Target Action
@@ -199,8 +223,10 @@
 -(void)catalog:(WTCatalogViewController *)catalog didSelectChapter:(NSUInteger)chapter page:(NSUInteger)page
 {
     if (!_model.chapters[chapter].isDownloadChapter) {
-        [self fetchChapterWithModel:_model.chapters[chapter] isNext:YES targetChapter:chapter];
-        return;
+        if (![self fetchChapterFromDatabaseWithChapterIndex:chapter]) {
+            [self fetchChapterWithModel:_model.chapters[chapter] isNext:YES targetChapter:chapter];
+            return;
+        }
     }
 
     [self.pageViewController setViewControllers:@[[self readViewWithChapter:chapter page:page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
@@ -240,6 +266,8 @@
 
 - (void)menuViewClickDownloadBtn:(WTBottomMenuView *)bottomMenu{
     bottomMenu.readModel.isDownloading = YES;
+    [[WTBookDownloader downloader] downloadAllChapterInBackgrounpWithCatalogue:self.model.chapters
+                                                                        bookId:self.bookModel._id];
     NSLog(@"点击下载按钮");
 }
 
@@ -253,9 +281,9 @@
     
     [_model.record.chapterModel updateFont];
     
-    for (int i = 0; i < _model.chapters.count; i++) {
-        [_model.chapters[i] updateFont];
-    }
+//    for (int i = 0; i < _model.chapters.count; i++) {
+//        [_model.chapters[i] updateFont];
+//    }
     
     [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
     [self updateReadModelWithChapter:_model.record.chapter page:(_model.record.page>_model.record.chapterModel.pageCount-1)?_model.record.chapterModel.pageCount-1:_model.record.page];
@@ -394,7 +422,11 @@
     
     _pageChange = _page;
     _chapterChange = _chapter;
-    
+    if ( (_chapterChange - 1) > 0
+        && !_model.chapters[_chapterChange - 1].isDownloadChapter) {
+        //如果本地不存在 查找本地缓存
+        [self fetchChapterFromDatabaseWithChapterIndex:_chapterChange - 1];
+    }
     if (_chapterChange==0 &&_pageChange == 0) {
         [MBProgressHUD showTextMessageInWindow:@"当前已经是第一章节" hideAfterDelay:1.0];
         return nil;
@@ -407,7 +439,7 @@
     else{
         _pageChange--;
     }
-    
+    NSLog(@"Before chapter:%ld ===  page:%ld",_chapterChange,_pageChange);
     if (!_model.chapters[_chapterChange].isDownloadChapter) {
         [self fetchChapterWithModel:_model.chapters[_chapterChange] isNext:NO targetChapter:_chapterChange];
         return nil;
@@ -419,10 +451,17 @@
     
     _pageChange = _page;
     _chapterChange = _chapter;
+    if ( (_chapterChange + 1) < self.model.chapters.count
+        && !_model.chapters[_chapterChange + 1].isDownloadChapter) {
+        //如果本地不存在 查找本地缓存
+        [self fetchChapterFromDatabaseWithChapterIndex:_chapterChange + 1];
+    }
+    
     if (_pageChange == _model.chapters.lastObject.pageCount-1 && _chapterChange == _model.chapters.count-1) {
         [MBProgressHUD showTextMessageInWindow:@"当前已经是最后章节" hideAfterDelay:1.0];
         return nil;//最后一个章节的最后一页
     }
+    
     if (_pageChange == _model.chapters[_chapterChange].pageCount-1) {
         _chapterChange++;
         _pageChange = 0; //当前章节最后一页时，跳章节
@@ -431,11 +470,11 @@
         _pageChange++;
     }
     
+    NSLog(@"After chapter:%ld ===  page:%ld",_chapterChange,_pageChange);
     if (!_model.chapters[_chapterChange].isDownloadChapter) {
         [self fetchChapterWithModel:_model.chapters[_chapterChange] isNext:YES targetChapter:_chapterChange];
         return nil;
     }
-    
     return [self readViewWithChapter:_chapterChange page:_pageChange];
 }
 #pragma mark - Override
@@ -495,6 +534,11 @@
     return _catalogView;
 }
 
+- (BOOL)canDownload{
+    NSInteger total = [WTStoredChapterModel allObjects].count;
+    return total > self.model.chapters.count;
+}
+
 - (void)setBookModel:(WTSortDetailItemModel *)bookModel{
     _bookModel = bookModel;
     
@@ -508,6 +552,7 @@
          readModel.chapters = [NSMutableArray arrayWithArray:catalogue.chapters];
          self.model = readModel;
          
+         // 查找本地缓存的书籍信息
          WTStoredBookModel *storedBook = [WTStoredBookModel objectForPrimaryKey:self.bookModel._id];
          WTChapterModel *currentChapter = catalogue.chapters.firstObject;
          if (storedBook  && storedBook.currentChapterCount < catalogue.chapters.count) {
@@ -518,6 +563,14 @@
              _page = self.model.record.page;
          }
          
+         //先从数据库查找
+         if ([self fetchChapterFromDatabaseWithChapterIndex:_chapter]) {
+             [self setupUI];
+             [self hideProgressHUD];
+             return;
+         }
+         
+         //本地没有缓存的情况 再从网上下载
          RACTuple *chapter = RACTuplePack(currentChapter);
          [[[WTBookDownloader downloader].fetchBookChapterData execute:chapter]
           subscribeNext:^(WTBookChapterContentModel *chapter) {

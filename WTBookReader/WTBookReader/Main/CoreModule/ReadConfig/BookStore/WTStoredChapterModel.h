@@ -7,8 +7,11 @@
 //
 
 #import <Realm/Realm.h>
+#import "WTChapterModel.h"
 
 @interface WTStoredChapterModel : RLMObject
+/** 章节id */
+@property NSString *chapterId;
 /** 章节索引 */
 @property NSInteger chapterIndex;
 /** 章节标题 */
@@ -24,4 +27,5 @@
 /** 章节是否被下载 */
 @property BOOL isDownloaded;
 
+- (instancetype)initWithModel:(WTChapterModel *)model;
 @end

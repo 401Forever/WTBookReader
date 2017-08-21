@@ -43,7 +43,7 @@ static WTBookCache *bookCache = nil;
     }
     NSUInteger beginIndex = currentChapter - 5;
     NSUInteger endIndex = currentChapter + 20;
-    if (beginIndex <= 0) beginIndex = 1;
+    if (beginIndex <= 0) beginIndex = 0;
     NSString *condition = [NSString stringWithFormat:@"chapterIndex >= %ld AND chapterIndex <= %ld",beginIndex,endIndex];
     RLMResults *results = [WTStoredChapterModel objectsWhere:condition];
     [self.cacheDict removeAllObjects];
