@@ -423,8 +423,7 @@
     
     _pageChange = _page;
     _chapterChange = _chapter;
-    if ( (_chapterChange - 1) > 0
-        && !_model.chapters[_chapterChange - 1].isDownloadChapter) {
+    if ( _chapterChange != 0  && !_model.chapters[_chapterChange - 1].isDownloadChapter) {
         //如果本地不存在 查找本地缓存
         [self fetchChapterFromDatabaseWithChapterIndex:_chapterChange - 1];
     }
