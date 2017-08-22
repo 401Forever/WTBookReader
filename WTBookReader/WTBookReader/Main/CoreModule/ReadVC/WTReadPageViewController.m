@@ -273,8 +273,14 @@
 
 -(void)menuViewJumpChapter:(NSUInteger)chapter page:(NSUInteger)page
 {
-    [self.pageViewController setViewControllers:@[[self readViewWithChapter:chapter page:page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
-    [self updateReadModelWithChapter:chapter page:page];
+    if ([self fetchChapterFromDatabaseWithChapterIndex:chapter]) {
+        [self.pageViewController setViewControllers:@[[self readViewWithChapter:chapter page:page]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+        [self updateReadModelWithChapter:chapter page:page];
+        return;
+    }
+    if (chapter < self.model.chapters.count) {
+        [self fetchChapterWithModel:self.model.chapters[chapter] isNext:YES targetChapter:chapter];
+    }
 }
 -(void)menuViewFontSize:(WTBottomMenuView *)bottomMenu
 {
