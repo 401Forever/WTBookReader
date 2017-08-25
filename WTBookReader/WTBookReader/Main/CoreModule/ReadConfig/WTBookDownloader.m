@@ -158,6 +158,19 @@ static WTBookDownloader *downloader = nil;
             WTChapterModel *currentChapter = catalogues[index];
             NSLog(@"阻塞 %ld",index);
             dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
+            
+            //如果已经下载的 就不再下载
+            NSString *condition = [NSString stringWithFormat:@"bookId = '%@' AND chapterIndex = %ld",bookId, index];
+            RLMResults *results = [WTStoredChapterModel objectsWhere:condition];
+            if (results.count) {
+                WTStoredChapterModel *result = results.firstObject;
+                if (result.isDownloaded) {
+                    NSLog(@"本章节已经下载  不再下载 %ld",index);
+                    dispatch_semaphore_signal(_semaphore);
+                    continue;
+                }
+            }
+            
             [self fetChapterWithModel:currentChapter withComplete:^(id resultDictionary, NSError *error) {
                 WTStoredChapterModel *storeChapter = [[WTStoredChapterModel alloc] initWithModel:currentChapter];
                 RLMRealm *realm = [RLMRealm defaultRealm];
