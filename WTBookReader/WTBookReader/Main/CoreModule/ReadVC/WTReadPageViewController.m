@@ -63,6 +63,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(saveStatus:)
                                                  name:UIApplicationWillTerminateNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveStatus:)
+                                                 name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
