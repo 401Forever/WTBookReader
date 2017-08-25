@@ -44,7 +44,6 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self addChildViewController:self.pageViewController];
-    //    [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     
     [self.view addGestureRecognizer:({
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showToolMenu)];
@@ -58,7 +57,12 @@
     [self.view addSubview:self.catalogView];
     [self.catalogView addSubview:self.catalogVC.view];
     //添加笔记
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNotes:) name:WTNoteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(addNotes:)
+                                                 name:WTNoteNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(saveStatus:)
+                                                 name:UIApplicationWillTerminateNotification object:nil];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
@@ -217,6 +221,20 @@
 -(void)hiddenCatalog
 {
     [self catalogShowState:NO];
+}
+
+- (void)saveStatus:(NSNotification *)noti{
+    NSString *condition = [NSString stringWithFormat:@"bookId = '%@'",self.bookModel._id];
+    RLMResults *models = [WTStoredBookModel objectsWhere:condition];
+    if (!models.count) {return;}
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    WTStoredBookModel *storeModel = models.firstObject;
+    storeModel.chapterCount = self.model.chapters.count;
+    storeModel.currentPageCount = _page;
+    storeModel.currentChapterCount = _chapter;
+    [WTStoredBookModel createOrUpdateInRealm:realm withValue:storeModel];
+    [realm commitWriteTransaction];
 }
 
 #pragma mark - CatalogViewController Delegate
@@ -495,6 +513,9 @@
     return UIStatusBarStyleLightContent;
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 #pragma mark - Setter And Getter
 -(UIPageViewController *)pageViewController

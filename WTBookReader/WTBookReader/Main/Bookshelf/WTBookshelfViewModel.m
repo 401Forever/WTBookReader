@@ -9,7 +9,6 @@
 #import "WTBookshelfViewModel.h"
 #import "WTStoredBookModel.h"
 #import "WTSortDetailModel.h"
-#import "WTBookStoreManager.h"
 @interface WTBookshelfViewModel()
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @end
@@ -17,7 +16,6 @@
 - (instancetype)init{
     if (self = [super init]) {
         [self initialBind];
-        [WTBookStoreManager bookStoreManager];
     }
     return self;
 }
