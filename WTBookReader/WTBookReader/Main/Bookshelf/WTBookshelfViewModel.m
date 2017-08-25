@@ -9,6 +9,7 @@
 #import "WTBookshelfViewModel.h"
 #import "WTStoredBookModel.h"
 #import "WTSortDetailModel.h"
+#import "WTStoredChapterModel.h"
 @interface WTBookshelfViewModel()
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @end
@@ -66,12 +67,24 @@
         return;
     }
     RLMRealm *realm = [RLMRealm defaultRealm];
+    // 删除掉书籍 和 已经下载的章节数据
     WTSortDetailItemModel *model = self.dataArray[indexPath.row];
     WTStoredBookModel *bookModel = [[WTStoredBookModel alloc] initWithModel:model];
+    
+    NSString *condition = [NSString stringWithFormat:@"bookId = '%@'",bookModel.bookId];
+    RLMResults *results = [WTStoredChapterModel objectsWhere:condition];
+    if (results.count) {
+        [realm beginWriteTransaction];
+        [realm deleteObjects:results];
+        [realm commitWriteTransaction];
+    }
+    
     [realm beginWriteTransaction];
     bookModel = [WTStoredBookModel createOrUpdateInRealm:realm withValue:bookModel];
     [realm deleteObject:bookModel];
     [realm commitWriteTransaction];
+    
+    
     
     [self.dataArray removeObject:model];
 }
