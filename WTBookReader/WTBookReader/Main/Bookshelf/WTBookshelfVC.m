@@ -90,8 +90,10 @@
       execute:nil]
      subscribeNext:^(id x) {
          @strongify(self);
-         [self.tableView.mj_header endRefreshing];
-         [self.tableView reloadData];
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [self.tableView.mj_header endRefreshing];
+             [self.tableView reloadData];
+         });
      }];
 }
 

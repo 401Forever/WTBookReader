@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MBProgressHUD/MBProgressHUD.h>
+#import "MBProgressHUD+Ex.h"
 
 @interface UIViewController (Hud)
 /** 需要移除的手势 */
@@ -15,4 +15,7 @@
 
 - (void)showProgressHUD;
 - (void)hideProgressHUD;
+
+
+- (void)showMessage:(NSString *)message;
 @end

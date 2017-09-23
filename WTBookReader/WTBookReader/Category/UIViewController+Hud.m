@@ -39,4 +39,8 @@ char* const ASSOCIATION_MBProgressHUD = "ASSOCIATION_MBProgressHUD";
     });
 
 }
+
+- (void)showMessage:(NSString *)message{
+    [MBProgressHUD showTextMessageInWindow:message hideAfterDelay:1.0];
+}
 @end

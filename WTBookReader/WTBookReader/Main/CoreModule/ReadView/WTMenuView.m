@@ -30,6 +30,9 @@
     [self addSubview:self.topView];
     [self addSubview:self.bottomView];
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenSelf)]];
+    
+    self.topView.frame = CGRectMake(0, -TopViewHeight, ViewSize(self).width,TopViewHeight);
+    self.bottomView.frame = CGRectMake(0, ViewSize(self).height, ViewSize(self).width,BottomViewHeight);
 }
 -(WTTopMenuView *)topView
 {
@@ -125,7 +128,9 @@
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    _topView.frame = CGRectMake(0, -TopViewHeight, ViewSize(self).width,TopViewHeight);
-    _bottomView.frame = CGRectMake(0, ViewSize(self).height, ViewSize(self).width,BottomViewHeight);
+    if (_bottomView.frame.origin.y == 0) {
+        _topView.frame = CGRectMake(0, -TopViewHeight, ViewSize(self).width,TopViewHeight);
+        _bottomView.frame = CGRectMake(0, ViewSize(self).height, ViewSize(self).width,BottomViewHeight);
+    }
 }
 @end

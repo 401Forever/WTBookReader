@@ -74,6 +74,12 @@
     [self.pageViewController setViewControllers:@[[self readViewWithChapter:_model.record.chapter page:_model.record.page]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
     self.menuView.recordModel = _model.record;
     self.catalogVC.readModel = _model;
+    
+    _pageViewController.view.frame = self.view.frame;
+    _menuView.frame = self.view.frame;
+    _catalogView.frame = CGRectMake(-ViewSize(self.view).width, 0, 2*ViewSize(self.view).width, ViewSize(self.view).height);
+    _catalogVC.view.frame = CGRectMake(0, 0, ViewSize(self.view).width-100, ViewSize(self.view).height);
+    [_catalogVC reload];
 }
 
 -(void)catalogShowState:(BOOL)show
@@ -437,11 +443,11 @@
 {
     [super viewDidLayoutSubviews];
     
-    _pageViewController.view.frame = self.view.frame;
-    _menuView.frame = self.view.frame;
-    _catalogView.frame = CGRectMake(-ViewSize(self.view).width, 0, 2*ViewSize(self.view).width, ViewSize(self.view).height);
-    _catalogVC.view.frame = CGRectMake(0, 0, ViewSize(self.view).width-100, ViewSize(self.view).height);
-    [_catalogVC reload];
+//    _pageViewController.view.frame = self.view.frame;
+//    _menuView.frame = self.view.frame;
+//    _catalogView.frame = CGRectMake(-ViewSize(self.view).width, 0, 2*ViewSize(self.view).width, ViewSize(self.view).height);
+//    _catalogVC.view.frame = CGRectMake(0, 0, ViewSize(self.view).width-100, ViewSize(self.view).height);
+//    [_catalogVC reload];
 }
 
 #pragma mark - UIPageViewControllerDataSource
