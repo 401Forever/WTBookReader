@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QKr-mW-NTG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QKr-mW-NTG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +34,7 @@
                 <navigationController id="hSG-z4-tli" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="找书" image="tb_zhaoshu_free.png" selectedImage="tb_zhaoshu_selected_free.png" id="JoQ-u0-wnK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A0j-G9-DYX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -59,7 +59,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hkD-5H-aSJ" id="7C5-8S-YqR">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="d_ranking" translatesAutoresizingMaskIntoConstraints="NO" id="1TG-Nm-2Gf">
@@ -70,7 +70,7 @@
                                             </constraints>
                                         </imageView>
                                         <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="排行榜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Pb-5Q-wDo">
-                                            <rect key="frame" x="55" y="11.5" width="279" height="20"/>
+                                            <rect key="frame" x="55" y="11.5" width="278" height="20"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Nr0-7v-YhA"/>
@@ -80,7 +80,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ugO-Ut-fMc">
-                                            <rect key="frame" x="15" y="43" width="327" height="1"/>
+                                            <rect key="frame" x="15" y="43" width="326" height="1"/>
                                             <color key="backgroundColor" red="0.90898235100000002" green="0.90898235100000002" blue="0.90898235100000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="o3l-DT-HyY"/>
@@ -126,7 +126,7 @@
                 <navigationController id="Llw-cH-XHM" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="书架" image="tb_bookshelf_free.png" selectedImage="tb_bookshelf_selected_free.png" id="OhJ-PI-lkY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jSE-rW-hs9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -154,14 +154,14 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZwO-in-2ux">
-                                            <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                            <rect key="frame" x="26" y="16.5" width="40" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="Hxo-Jf-GEl"/>
                                                 <constraint firstAttribute="height" constant="55" id="w1D-8O-ynv"/>
                                             </constraints>
                                         </imageView>
                                         <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxG-I2-yBZ">
-                                            <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                            <rect key="frame" x="81" y="11" width="268" height="21"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="OGE-Mz-O0Z"/>
@@ -171,7 +171,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-Fl-q3y">
-                                            <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                            <rect key="frame" x="81" y="34" width="268" height="16"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="0fO-nY-o9v"/>
@@ -181,7 +181,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IgX-xz-GUY">
-                                            <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                            <rect key="frame" x="81" y="50" width="268" height="16"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="893-0U-cBi"/>
@@ -191,7 +191,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jX-os-vom">
-                                            <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                            <rect key="frame" x="81" y="66" width="268" height="18"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="tM8-hs-8Eg"/>
@@ -476,14 +476,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E2p-83-2g8">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="CVi-Te-s31"/>
                                                                         <constraint firstAttribute="height" constant="55" id="ogT-dG-RIs"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwi-hO-9l3">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="BmT-ZZ-BuP"/>
@@ -493,7 +493,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tje-a7-upg">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="khL-RM-fTG"/>
@@ -503,7 +503,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noz-py-t1T">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="RhJ-hS-NEp"/>
@@ -513,7 +513,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIS-QU-sul">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="FiT-E4-beF"/>
@@ -576,14 +576,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rwl-G6-rdZ">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="7Tp-Cy-dCr"/>
                                                                         <constraint firstAttribute="width" constant="40" id="dw7-aM-Yxa"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-WC-IlH">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="cnO-wi-8WI"/>
@@ -593,7 +593,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdt-Ee-efa">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="FD1-1P-lmK"/>
@@ -603,7 +603,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9OK-lS-l8c">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="Qus-gH-jLA"/>
@@ -613,7 +613,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdv-Jq-ff2">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="cJH-8g-56d"/>
@@ -676,14 +676,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9R5-is-7SK">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="SXI-vx-Dhj"/>
                                                                         <constraint firstAttribute="height" constant="55" id="eRt-db-vw8"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAK-y9-uAL">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="gsP-51-yGN"/>
@@ -693,7 +693,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHF-uj-vJc">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="fQR-nD-anP"/>
@@ -703,7 +703,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VO-qW-jgv">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="C4h-ae-tTe"/>
@@ -713,7 +713,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjj-O1-TRu">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="GYG-wD-e78"/>
@@ -776,14 +776,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wch-k9-WsC">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="6b1-Ef-G6c"/>
                                                                         <constraint firstAttribute="height" constant="55" id="Bn7-g6-Y2r"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpO-7n-n60">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="ZJ8-ZF-KSq"/>
@@ -793,7 +793,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhC-rl-W1E">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="Kss-c9-0yZ"/>
@@ -803,7 +803,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuS-UE-zrA">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="f0R-Dr-Doa"/>
@@ -813,7 +813,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve3-1N-2Xv">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="4yV-Jw-8c3"/>
@@ -971,7 +971,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView hidden="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ranking_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="VLM-Sg-hac">
-                                                    <rect key="frame" x="332" y="13" width="35" height="35"/>
+                                                    <rect key="frame" x="325" y="13" width="35" height="35"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -1118,14 +1118,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXI-um-Gc1">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="55" id="Fye-mD-n5n"/>
                                                                         <constraint firstAttribute="width" constant="40" id="a3J-AR-DsO"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7o-l4-Xie">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="uNE-oX-BkO"/>
@@ -1135,7 +1135,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyz-kC-1sg">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="AVx-mZ-21v"/>
@@ -1145,7 +1145,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tza-1D-uH8">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="qZJ-T4-pos"/>
@@ -1155,7 +1155,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5t-Yq-HZc">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="MI5-84-R6u"/>
@@ -1218,14 +1218,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mID-6t-KyC">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="rE0-ix-NSy"/>
                                                                         <constraint firstAttribute="height" constant="55" id="rqS-zY-U5z"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSU-l0-BTV">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="rrP-7n-GZ2"/>
@@ -1235,7 +1235,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuH-ha-02O">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="fcX-bD-PrO"/>
@@ -1245,7 +1245,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVn-Ww-IxI">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="UPB-Bz-hgW"/>
@@ -1255,7 +1255,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAO-dh-GCK">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="c6z-dO-r1l"/>
@@ -1318,14 +1318,14 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WYD-oG-PuE">
-                                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="40" id="04F-Qh-fNo"/>
                                                                         <constraint firstAttribute="height" constant="55" id="ezd-rS-Ef9"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87M-kB-N7Y">
-                                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="XRP-H8-h4s"/>
@@ -1335,7 +1335,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CN-xC-RpK">
-                                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="lvr-Tz-Hlw"/>
@@ -1345,7 +1345,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfG-f5-TuK">
-                                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="16" id="M5Q-3f-PBY"/>
@@ -1355,7 +1355,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9eL-6m-yrr">
-                                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="18" id="gz6-qN-zLm"/>
@@ -1484,14 +1484,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2NV-4I-WRq">
-                                                    <rect key="frame" x="18" y="16.5" width="40" height="55"/>
+                                                    <rect key="frame" x="25" y="16.5" width="40" height="55"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="4AT-3r-LzL"/>
                                                         <constraint firstAttribute="height" constant="55" id="xN4-dh-HTe"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大主宰" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K34-jd-IeK">
-                                                    <rect key="frame" x="73" y="8" width="284" height="21"/>
+                                                    <rect key="frame" x="80" y="11" width="270" height="21"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Kgo-KJ-En3"/>
@@ -1501,7 +1501,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天蚕土豆 | 玄幻" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmC-7y-Xhw">
-                                                    <rect key="frame" x="73" y="31" width="284" height="16"/>
+                                                    <rect key="frame" x="80" y="34" width="270" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="eXg-jt-yub"/>
@@ -1511,7 +1511,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大千世界，界面交汇，万族林立，群雄璀璨，一位位大神..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XJB-uV-1qP">
-                                                    <rect key="frame" x="73" y="47" width="284" height="16"/>
+                                                    <rect key="frame" x="80" y="50" width="270" height="16"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="xeB-Pe-dcJ"/>
@@ -1521,7 +1521,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35155在追 | 60.50% 读者留存" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya4-x7-9Jx">
-                                                    <rect key="frame" x="73" y="63" width="284" height="18"/>
+                                                    <rect key="frame" x="80" y="66" width="270" height="18"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="nIh-YN-6jD"/>
